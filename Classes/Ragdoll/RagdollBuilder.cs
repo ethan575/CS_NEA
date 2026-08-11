@@ -71,7 +71,8 @@ namespace _3D_Engine.Classes.Ragdoll
                 obj.UpdateVisual();
             }
 
-            if (game.mouseState.IsButtonPressed(MouseButton.Left))
+            // only on the frame the button goes down, so we don't spawn a marker every frame while held
+            if (game.mouseState.IsButtonPressed(MouseButton.Left) && !game.mouseState.WasButtonDown(MouseButton.Left))
             {
                 //Console.WriteLine($"Mouse Position: {game.mouseState.X}, {game.mouseState.Y}");
                 // make a raycast from the camera position to the mouse position and check if it hits any of the objects in the scene
@@ -165,7 +166,8 @@ namespace _3D_Engine.Classes.Ragdoll
             int height = game.ClientSize.Y;
 
             // Screen -> NDC. Add 0.5 to sample pixel centers.
-            float ndcX = -((2.0f * (screenPos.X + 0.5f)) / width - 1.0f);
+            // (no minus sign on X: NDC X grows to the right, same as screen X)
+            float ndcX = (2.0f * (screenPos.X + 0.5f)) / width - 1.0f;
             float ndcY = 1.0f - (2.0f * (screenPos.Y + 0.5f)) / height;
 
             Matrix4 projection = game.GetCamera().GetProjectionMatrix(width, height);
