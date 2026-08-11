@@ -1,0 +1,44 @@
+⭐ The algorithm in 3 phases
+This is the version used in ODE and many indie engines.
+
+⭐ Phase 1 — Find the “portal”
+You start by finding a direction from A to B:
+
+Code
+d = centerB - centerA
+Then compute:
+
+Code
+v0 = support(d)
+v1 = support(perpendicular to d)
+v2 = support(perpendicular to both)
+These three points form a triangle on the Minkowski difference.
+
+This triangle is your portal.
+
+⭐ Phase 2 — Portal refinement
+Now you repeatedly:
+
+Compute the normal of the portal triangle
+
+Shoot a support point in that direction
+
+If the new point is “in front” of the portal → replace one vertex
+
+If the new point is “behind” → you’ve found the closest face
+
+This converges extremely fast.
+
+Unlike EPA, you never build a polytope.
+You only ever maintain one triangle.
+
+⭐ Phase 3 — Extract contact info
+Once the portal stops changing:
+
+The portal normal is the collision normal
+
+The distance from origin to the portal plane is the penetration depth
+
+The barycentric coordinates of the origin projected onto the triangle give the contact point (no clue what that is so just ignore it for the sec)
+
+Done.

@@ -1,0 +1,13 @@
+#
+ Add all collision shapes -> done
+ Add Sphere to capsule collision -> done
+ 
+	sphere -> done
+	capsule
+	cube ??
+	Mesh??
+Add rigid bodies : done
+rendered entities list: done
+added framerate independant moving using delta time -> done
+add ragdoll -> done
+motor -> partially done with 1 DOF

@@ -1,0 +1,539 @@
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\3D Engine.exe
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\3D Engine.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\20Rodrigues.Ethan\OneDrive - Poole High School\Computer science\3D engine\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.3\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.4\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.5\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.6\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.sourcelink.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.7\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v0.8\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\Jitter2.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.1\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\Jitter2.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.2\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\Jitter2.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\Jitter2.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\System.Private.Windows.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\System.Private.Windows.GdiPlus.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\StbImageSharp.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\Shaders\TextureDisplay\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.3\bin\Debug\net8.0\Shaders\TextureDisplay\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\Shaders\TextureDisplay\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\Shaders\TextureDisplay\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\Jitter2.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\MathNet.Numerics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\StbImageSharp.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\System.Private.Windows.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\System.Private.Windows.GdiPlus.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.4\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\models\Raw\bone.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\models\Raw\cube.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\models\Raw\floor.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\models\Raw\monkey.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\Shaders\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\Shaders\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\Shaders\TextureDisplay\shader.frag
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\Shaders\TextureDisplay\shader.vert
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\models\Raw\joint.stl
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\3D Engine.exe
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\3D Engine.deps.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\3D Engine.runtimeconfig.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\Jitter2.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\MathNet.Numerics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Audio.OpenAL.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Compute.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Graphics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Input.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Mathematics.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Windowing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Windowing.Desktop.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\StbImageSharp.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\System.Private.Windows.Core.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\System.Private.Windows.GdiPlus.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\runtimes\linux-x64\native\libglfw.so.3
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.csproj.AssemblyReference.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.AssemblyInfoInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.AssemblyInfo.cs
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.csproj.CoreCompileInputs.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.csproj.Up2Date
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\refint\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.pdb
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\ref\3D Engine.dll
