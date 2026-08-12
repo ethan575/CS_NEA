@@ -1,4 +1,4 @@
-﻿using _3D_Engine;
+using _3D_Engine;
 using _3D_Engine.Classes;
 using _3D_Engine.Classes.CameraPresets;
 using _3D_Engine.Classes.Scenes;
@@ -128,6 +128,11 @@ public class Game : GameWindow
         base.OnFramebufferResize(e);
 
         GL.Viewport(0, 0, e.Width, e.Height);
+
+        // Keep the camera's viewport size in sync with the framebuffer. Rendering
+        // (EditorCam.OnFrameRender) and mouse picking (RagdollBuilder.ScreenToWorldPointer)
+        // both read this, so they can never disagree about the projection size.
+        cam.Size = new Vector2(e.Width, e.Height);
 
         //projection = Matrix4.CreateOrthographicOffCenter(0f, e.Width, 0f, e.Height, -1f, 1f);
         projection = cam.GetProjectionMatrix(e.Width, e.Height);

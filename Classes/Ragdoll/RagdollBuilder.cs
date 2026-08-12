@@ -1,4 +1,4 @@
-﻿using _3D_Engine.Classes.Objects;
+using _3D_Engine.Classes.Objects;
 using _3D_Engine.Classes.physics;
 using _3D_Engine.Classes.Scenes;
 using Jitter2;
@@ -23,12 +23,17 @@ namespace _3D_Engine.Classes.Ragdoll
         float[] jointVertex;
         float[] boneVertex;
 
+        // single reusable marker for the hit point (spawning a new WorldObject per
+        // click would add a permanent object to the scene every time)
+        WorldObject? hitMarker = null;
+
         public RagdollBuilder(Game game, World world, List<RagdollObjects> ragdollObjects)
         {
             this.game = game;
             this.shader = game.shader;
             this.world = world;
             this.SelectableObjects = ragdollObjects;
+            this.scene = SceneManager.CurrentScene;
 
             jointVertex = ModelImporter.LoadModel("models/Raw/joint.stl");
             boneVertex = ModelImporter.LoadModel("models/Raw/bone.stl");
@@ -40,6 +45,7 @@ namespace _3D_Engine.Classes.Ragdoll
             this.shader = game.shader;
             this.world = world;
             this.SelectableObjects = new List<RagdollObjects>();
+            this.scene = SceneManager.CurrentScene;
 
             jointVertex = ModelImporter.LoadModel("models/Raw/joint.stl");
             boneVertex = ModelImporter.LoadModel("models/Raw/bone.stl");
@@ -87,10 +93,13 @@ namespace _3D_Engine.Classes.Ragdoll
                 Console.WriteLine($"Hit proxy type: {proxy?.GetType().Name ?? "null"}");
                 if (hit)
                 {
-
-                    var o = new WorldObject("hitPoint", shader, boneVertex, scene, new Vector3(0.1f, 0.1f, 0.1f));
-                    o.setPosition(hitInfo.Point);
-                    o.Draw();
+                    // move the marker to the hit point (the scene renders all
+                    // WorldObjects in SceneManager.RenderedEntities every frame)
+                    if (hitMarker == null)
+                    {
+                        hitMarker = new WorldObject("hitPoint", shader, boneVertex, scene, new Vector3(0.1f, 0.1f, 0.1f));
+                    }
+                    hitMarker.setPosition(hitInfo.Point);
 
 
                     SelectableObjects.ForEach(obj => obj.Visual.color = obj.Visual.defaultColor); // Reset all objects to default color
@@ -138,37 +147,26 @@ namespace _3D_Engine.Classes.Ragdoll
             }
         }
 
-        // https://www.reddit.com/r/gamemaker/comments/c6684w/3d_converting_a_screenspace_mouse_position_into_a/
-        //private Vector3 ScreenToWorldDirection(Vector2 ScreenPos)
-        //{
-        //    float x = (2.0f * (ScreenPos.X + 0.5f)) / game.ClientSize.X - 1.0f;
-        //    float y = 1.0f - (2.0f * (ScreenPos.Y + 0.5f)) / game.ClientSize.Y;
-
-        //    float m11 = game.projection.M11;
-        //    float m22 = game.projection.M22;
-        //    Vector3 eyeDir = new Vector3(x / m11, y / m22, -1.0f);
-
-        //    Matrix4 invView = Matrix4.Invert(game.view);
-
-        //    // Transform view-space direction to world space (column-vector convention)
-        //    Vector4 worldDir4 = invView * new Vector4(eyeDir, 0f);
-
-        //    // CRITICAL FIX: Correct the mirrored X-axis caused by the camera's Right = (-1, 0, 0)
-        //    worldDir4.X = -worldDir4.X;
-
-        //    Vector3 rayDir = Vector3.Normalize(worldDir4.Xyz);
-        //    return rayDir;
-        //}
-
         private (Vector3 origin, Vector3 direction) ScreenToWorldPointer(Vector2 screenPos)
         {
-            int width = game.ClientSize.X;
-            int height = game.ClientSize.Y;
+            // The viewport and the projection matrix used for rendering are in framebuffer
+            // pixels (Camera.Size, kept in sync in Game.OnFramebufferResize), but the mouse
+            // position is in client pixels. Convert the mouse position to framebuffer pixels
+            // first, otherwise the ray is computed against a different projection than the
+            // one the image was drawn with and the hit drifts away from the cursor (the
+            // drift grows with distance from the camera).
+            int width = (int)game.GetCamera().Size.X;
+            int height = (int)game.GetCamera().Size.Y;
+
+            float scaleX = game.ClientSize.X > 0 ? (float)width / game.ClientSize.X : 1f;
+            float scaleY = game.ClientSize.Y > 0 ? (float)height / game.ClientSize.Y : 1f;
+
+            float x = screenPos.X * scaleX;
+            float y = screenPos.Y * scaleY;
 
             // Screen -> NDC. Add 0.5 to sample pixel centers.
-            // (no minus sign on X: NDC X grows to the right, same as screen X)
-            float ndcX = (2.0f * (screenPos.X + 0.5f)) / width - 1.0f;
-            float ndcY = 1.0f - (2.0f * (screenPos.Y + 0.5f)) / height;
+            float ndcX = (2.0f * (x + 0.5f)) / width - 1.0f;
+            float ndcY = 1.0f - (2.0f * (y + 0.5f)) / height;
 
             Matrix4 projection = game.GetCamera().GetProjectionMatrix(width, height);
             Matrix4 view = game.GetCamera().GetViewMatrix();
