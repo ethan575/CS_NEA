@@ -90,9 +90,11 @@ namespace _3D_Engine.Classes.Ragdoll
 
                 bool hit = Raycast.RaycastHit(world, ToJVec(origin), ToJVec(direction), 100f, out RaycastHitInfo hitInfo, out JVector normal, out JVector hitOffset, out IDynamicTreeProxy proxy);
 
-                Console.WriteLine($"Hit proxy type: {proxy?.GetType().Name ?? "null"}");
                 if (hit)
                 {
+                    // [PICK] marker line so the console shows when a pick registers
+                    Console.WriteLine($"[PICK] hit {proxy?.GetType().Name ?? "null"} @ {hitInfo.Point} (distance {hitInfo.Distance:F2})");
+
                     // move the marker to the hit point (the scene renders all
                     // WorldObjects in SceneManager.RenderedEntities every frame)
                     if (hitMarker == null)
@@ -110,6 +112,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
                         if (selectedObject != null)
                         {
+                            Console.WriteLine($"[PICK] selected {selectedObject.Visual.Name}");
                             selectedObject.Visual.color = new Vector3(
                                 selectedObject.Visual.defaultColor.X,
                                 selectedObject.Visual.defaultColor.Y * 1.5f,
@@ -136,6 +139,10 @@ namespace _3D_Engine.Classes.Ragdoll
 
 
                 }
+                else
+                {
+                    Console.WriteLine("[PICK] miss");
+                }
             }
 
             if (game.keyboardState.IsKeyPressed(Keys.A))
@@ -161,12 +168,16 @@ namespace _3D_Engine.Classes.Ragdoll
             float scaleX = game.ClientSize.X > 0 ? (float)width / game.ClientSize.X : 1f;
             float scaleY = game.ClientSize.Y > 0 ? (float)height / game.ClientSize.Y : 1f;
 
-            float x = screenPos.X * scaleX;
-            float y = screenPos.Y * scaleY;
+            // Screen -> NDC. Add 0.5 to sample pixel centres. The +0.5 must be added in
+            // client pixels BEFORE the framebuffer scaling: the framebuffer pixel that
+            // maps to client pixel i is centred at (i + 0.5) * scale, not i * scale + 0.5,
+            // so applying it after scaling drifts the ray by 0.5 * (scale - 1) pixels on
+            // displays where the client size differs from the framebuffer size (HiDPI).
+            float x = (screenPos.X + 0.5f) * scaleX;
+            float y = (screenPos.Y + 0.5f) * scaleY;
 
-            // Screen -> NDC. Add 0.5 to sample pixel centers.
-            float ndcX = (2.0f * (x + 0.5f)) / width - 1.0f;
-            float ndcY = 1.0f - (2.0f * (y + 0.5f)) / height;
+            float ndcX = (2.0f * x) / width - 1.0f;
+            float ndcY = 1.0f - (2.0f * y) / height;
 
             Matrix4 projection = game.GetCamera().GetProjectionMatrix(width, height);
             Matrix4 view = game.GetCamera().GetViewMatrix();

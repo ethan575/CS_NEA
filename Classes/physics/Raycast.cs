@@ -36,7 +36,6 @@ namespace _3D_Engine.Classes.physics
                 Distance = distance,
             }: default;
 
-            hitInfo = hit ? hitInfo : default;
             Normal = hit ? normal : default;
             hitOffset = hit ? direction * distance : default;
             
