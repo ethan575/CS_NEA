@@ -1,4 +1,4 @@
-﻿using Jitter2.LinearMath;
+using Jitter2.LinearMath;
 using OpenTK.Mathematics;
 using Vector3 = OpenTK.Mathematics.Vector3;
 using Quaternion = OpenTK.Mathematics.Quaternion;
@@ -90,14 +90,13 @@ namespace _3D_Engine.Classes.Objects
 
         protected Matrix4 CreateTransformationMatix()
         {
-            //return Matrix4.CreateScale(scale.X, scale.Y, scale.Z) *
-            //       Matrix4.CreateFromQuaternion(Quaternion.FromEulerAngles(rotation.X, rotation.Y, rotation.Z)) * // quaternion rotation to prevent gimbal lock
-            //       Matrix4.CreateTranslation(position.X, position.Y, position.Z);
-
-            // flipped x postion so negative is left
+            // Do NOT mirror/negate position.X here. Rendering, physics and picking
+            // must all share the same world space; negating X drew every object at
+            // the mirrored position of its physics body, so click rays (which hit
+            // physics shapes) never lined up with what was on screen.
             return Matrix4.CreateScale(scale.X, scale.Y, scale.Z) *
                    Matrix4.CreateFromQuaternion(rotation) * // quaternion rotation to prevent gimbal lock
-                   Matrix4.CreateTranslation(-position.X, position.Y, position.Z);
+                   Matrix4.CreateTranslation(position.X, position.Y, position.Z);
         }
      //}
         public Matrix4 WorldMatrix // return worl space matrix

@@ -1,4 +1,4 @@
-﻿using OpenTK.Mathematics;
+using OpenTK.Mathematics;
 using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 using System;
@@ -13,7 +13,6 @@ namespace _3D_Engine.Classes.CameraPresets
     public class EditorCam: Camera
     {
         public KeyboardState kbState;
-        public Vector2 Size;
         public EditorCam(KeyboardState kbState, float sizeX, float sizeY) 
         {
             this.kbState = kbState;

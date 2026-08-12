@@ -1,4 +1,4 @@
-﻿using OpenTK.Mathematics;
+using OpenTK.Mathematics;
 using Vector3 = OpenTK.Mathematics.Vector3;
 
 namespace _3D_Engine.Classes.CameraPresets
@@ -23,6 +23,11 @@ namespace _3D_Engine.Classes.CameraPresets
         Vector3 Up = Vector3.UnitY;
 
         public float Fov = 60f;
+
+        /// <summary>Viewport size in pixels (framebuffer pixels). Kept in sync with the
+        /// actual framebuffer by Game.OnFramebufferResize so rendering and mouse picking
+        /// always use the same size.</summary>
+        public Vector2 Size;
 
         public Camera()
         {
