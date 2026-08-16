@@ -28,7 +28,8 @@ public class Game : GameWindow
         { ClientSize = new Vector2i(width, height), Title = title })
     {
         keyboardState = KeyboardState;
-        cam = new EditorCam(keyboardState, Size.X, Size.Y);
+        mouseState = MouseState;
+        cam = new EditorCam(this, keyboardState, mouseState, Size.X, Size.Y);
     }
 
     public Camera GetCamera()

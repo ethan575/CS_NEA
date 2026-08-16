@@ -537,3 +537,5 @@ C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder
 C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.pdb
 C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.genruntimeconfig.cache
 C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\ref\3D Engine.dll
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\obj\Debug\net8.0\3D Engine.sourcelink.json
+C:\Users\nicie\OneDrive\Desktop\Ethan\C# projects\NEA\3D engine v1.4.6 - builder\bin\Debug\net8.0\models\Raw\HingeAxisDisplay.stl

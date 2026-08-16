@@ -16,6 +16,9 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public Vector3 position { get; set; } = Vector3.Zero;
 
+        public JVector anchorPoint { get; private set; }
+        public JVector jointAxis { get; private set; } = JVector.UnitZ;
+
         /// <summary>
         ///joint
         /// </summary>
@@ -30,14 +33,31 @@ namespace _3D_Engine.Classes.Ragdoll
             float halfLengthA = boneA.Visual.GetScale().X * 0.5f;
             float halfLengthB = boneB.Visual.GetScale().X * 0.5f;
             // b1.GetWorldPosition().X + (b1.GetWorldScale().X * 8), 7, 10)
-            JVector anchor = boneA.RB.Position + new JVector(boneA.Visual.GetScale().X * 4, 0, 0);
+            anchorPoint = boneA.RB.Position + new JVector(boneA.Visual.GetScale().X * 4, 0, 0);
 
 
-            HindgeJointConstraint = new HingeJoint(world, boneA.RB, BoneB.RB, anchor, JVector.UnitZ, true);
+            HindgeJointConstraint = new HingeJoint(world, boneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
             HindgeJointConstraint.Motor.MaximumForce = 200f;
-            HindgeJointConstraint.Motor.IsEnabled = false;
+            HindgeJointConstraint.Motor.IsEnabled = true;
 
         }
+
+        public void SetJointAxis(Vector3 axis)
+        {
+            jointAxis = ToJVec(axis.Normalized());
+            HindgeJointConstraint.Remove();
+            HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
+            HindgeJointConstraint.Motor.MaximumForce = 200f;
+        }
+
+        public void SetJointAnchor(Vector3 anchor)
+        {
+            anchorPoint = ToJVec(anchor);
+            HindgeJointConstraint.Remove();
+            HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
+            HindgeJointConstraint.Motor.MaximumForce = 200f;
+        }
+
 
         // create own PD controller for target angles
         // https://stackoverflow.com/questions/72848440/how-to-find-the-relative-difference-between-two-quaternions

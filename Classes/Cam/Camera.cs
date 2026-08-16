@@ -1,4 +1,5 @@
 ﻿using OpenTK.Mathematics;
+using System.Runtime;
 using Vector3 = OpenTK.Mathematics.Vector3;
 
 namespace _3D_Engine.Classes.CameraPresets
@@ -20,7 +21,7 @@ namespace _3D_Engine.Classes.CameraPresets
             }
         }
         public Vector3 Front = Vector3.UnitZ;//-Vector3.UnitZ;
-        Vector3 Up = Vector3.UnitY;
+        public Vector3 Up = Vector3.UnitY;
 
         public float Fov = 60f;
 
@@ -46,6 +47,7 @@ namespace _3D_Engine.Classes.CameraPresets
             );
         }
 
+
         public void SetRotation(Vector3 rotation)
         {
             Quaternion quaternion = Quaternion.FromEulerAngles(rotation.X, rotation.Y, rotation.Z);
@@ -59,6 +61,15 @@ namespace _3D_Engine.Classes.CameraPresets
         {
             Front = Vector3.UnitZ;//-Vector3.UnitZ;
             Up = Vector3.UnitY;
+        }
+
+        public void LookAtPos(Vector3 pos)
+        {
+            Front = (pos * new Vector3(-1, 1, 1) - this.Position).Normalized();
+            Vector3 Right = Vector3.Cross(Front, Vector3.UnitY).Normalized();
+            Up = Vector3.Cross(Right, Front);
+
+
         }
     }
 }
