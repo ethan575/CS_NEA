@@ -6,8 +6,7 @@ using Jitter2.Collision.Shapes;
 using Jitter2.Dynamics;
 using Jitter2.LinearMath;
 using OpenTK.Mathematics;
-using OpenTK.Windowing.GraphicsLibraryFramework;
-using System.Drawing;
+using Keys = OpenTK.Windowing.GraphicsLibraryFramework.Keys;
 
 namespace _3D_Engine.Classes.Scenes
 {
@@ -30,7 +29,7 @@ namespace _3D_Engine.Classes.Scenes
         {
             this.game = game;
             shader = game.shader;
-            this.builder = new RagdollBuilder(game, world);
+            this.builder = new RagdollBuilder(game, world, this);
 
             physicsServer = new PhysicsServer();
 
@@ -42,6 +41,11 @@ namespace _3D_Engine.Classes.Scenes
 
             if (game.KeyboardState.IsKeyPressed(Keys.Escape))
             {
+                if (builder.selectedObject != null)
+                {
+                    builder.unselectObject(); // updated here cuz it doesnt detect the key in builder
+                    return;
+                }
                 SceneManager.LoadScene(new SimulationScene(game));
                 return;
             }
@@ -82,6 +86,8 @@ namespace _3D_Engine.Classes.Scenes
 
         public override void createScene()
         {
+            base.createScene();
+
             Vector3 color = new Vector3(0.5f, 0.5f, 0.5f);
 
             // Set up the initial state of the simulation scene (e.g., create objects, set positions)

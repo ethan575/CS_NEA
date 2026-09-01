@@ -1,4 +1,6 @@
 ﻿using _3D_Engine.Classes.Objects;
+using _3D_Engine.Classes.Ragdoll;
+using Jitter2.Dynamics.Constraints;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +42,9 @@ namespace _3D_Engine.Classes.Scenes
 
         public virtual void createScene()
         {
+
+            Bone.noOfBones = 0;
+            Ragdoll.Joint.noOfJoints = 0;
             // Override this method to set up the initial state of the scene (e.g., create objects, set positions)
         }
 

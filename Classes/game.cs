@@ -48,7 +48,7 @@ public class Game : GameWindow
         VSync = VSyncMode.On;
         shader = new Shader("Shaders/shader.vert", "Shaders/shader.frag");
 
-        shader.SetVector3("lightPos", new OpenTK.Mathematics.Vector3(10.0f, 10.0f, 10.0f));
+        
 
         cam.Position = new Vector3(0, 10, -8);
         cam.Front = Vector3.UnitZ - new Vector3(0, 0.5f, 0);
@@ -61,6 +61,7 @@ public class Game : GameWindow
         SceneManager.CurrentScene = new SimulationScene(this);
 
         shader.Use();
+        shader.SetVector3("lightPos", new OpenTK.Mathematics.Vector3(-10.0f, 30.0f, -20.0f));
         shader.SetMatrix4("projection", projection);
         shader.SetMatrix4("view", view);
 

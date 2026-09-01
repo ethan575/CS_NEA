@@ -1,16 +1,10 @@
 ﻿using OpenTK.Mathematics;
-using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Keys = OpenTK.Windowing.GraphicsLibraryFramework.Keys;
 
 namespace _3D_Engine.Classes.CameraPresets
 {
-    public class EditorCam: Camera
+    public class EditorCam : Camera
     {
         public KeyboardState kbState;
         public Vector2 Size;
@@ -29,7 +23,7 @@ namespace _3D_Engine.Classes.CameraPresets
         private Vector3 targetUp;
         private float t;
 
-        public EditorCam(Game game, KeyboardState kbState, MouseState mouseState, float sizeX, float sizeY) 
+        public EditorCam(Game game, KeyboardState kbState, MouseState mouseState, float sizeX, float sizeY)
         {
             this.kbState = kbState;
             this.game = game;
@@ -68,7 +62,7 @@ namespace _3D_Engine.Classes.CameraPresets
             // Mouse movement for rotation would be handled elsewhere, as it requires mouse input
 
 
-            
+
             if (game.mouseState.IsButtonPressed(MouseButton.Middle))
             {
                 game.CursorState = OpenTK.Windowing.Common.CursorState.Confined; // only switch once not every frame
@@ -97,7 +91,7 @@ namespace _3D_Engine.Classes.CameraPresets
                 Position = Vector3.Lerp(Position, targetPosition, t * dt);
                 Front = Vector3.Lerp(Front, targetFront, t * dt).Normalized();
                 Up = Vector3.Lerp(Up, targetUp, t * dt).Normalized();
-                
+
 
                 if ((Position - targetPosition).Length < 0.01f && (Front - targetFront).Length < 0.01f && (Up - targetUp).Length < 0.01f)
                 {
@@ -105,7 +99,7 @@ namespace _3D_Engine.Classes.CameraPresets
                 }
             }
 
-            
+
         }
 
         public void OnFrameRender(Shader shader)
@@ -151,7 +145,7 @@ namespace _3D_Engine.Classes.CameraPresets
             {
                 return;
             }
-                this.OrbitRadius -= obj.OffsetY;
+            this.OrbitRadius -= obj.OffsetY;
             this.OrbitRadius = Math.Clamp(this.OrbitRadius, 2, 30);
 
             Vector3 dir = Vector3.Zero;

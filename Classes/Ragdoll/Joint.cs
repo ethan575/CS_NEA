@@ -6,10 +6,17 @@ using OpenTK.Mathematics;
 
 namespace _3D_Engine.Classes.Ragdoll
 {
-    public class Joint: RagdollObjects
+    public class Joint : RagdollObjects
     {
-        public Bone BoneA { get; set; }
-        public Bone BoneB { get; set; }
+        public static int noOfJoints = 0; 
+        public int JointID { get; private set; }
+
+        public Bone BoneA { get; private set; }
+        public int BoneA_ID;
+
+        public Bone BoneB { get; private set; }
+        public int BoneB_ID;
+
         public HingeJoint HindgeJointConstraint { get; set; }
         public float stiffness { get; set; } = 80f;
         public float angularDamping { get; set; } = 5f;
@@ -19,13 +26,18 @@ namespace _3D_Engine.Classes.Ragdoll
         public JVector anchorPoint { get; private set; }
         public JVector jointAxis { get; private set; } = JVector.UnitZ;
 
+        public WorldObject HingeAxisVisual { get; set; }
+
         /// <summary>
         ///joint
         /// </summary>
         /// <param name="boneA">The Root bone.</param>
         /// <param name="boneB">The child bone.</param>
-        public Joint(World world, Bone boneA, Bone boneB, WorldObject Visual)
+        public Joint(World world, Bone boneA, Bone boneB, WorldObject Visual) // used when bones are present already
         {
+            this.JointID = Joint.noOfJoints;
+            Joint.noOfJoints++;
+
             BoneA = boneA;
             BoneB = boneB;
             this.Visual = Visual;
@@ -40,22 +52,60 @@ namespace _3D_Engine.Classes.Ragdoll
             HindgeJointConstraint.Motor.MaximumForce = 200f;
             HindgeJointConstraint.Motor.IsEnabled = true;
 
+
+        }
+
+        public Joint(World world, WorldObject Visual, JVector anchorPoint, WorldObject hingeAxisVisual) // for builder when bones not present yet
+        {
+            this.JointID = Joint.noOfJoints;
+            Joint.noOfJoints++;
+
+            this.Visual = Visual;
+            this.Visual.setPosition(FromJVec(anchorPoint));
+
+            this.anchorPoint = anchorPoint;
+            this.HingeAxisVisual = hingeAxisVisual;
+        }
+
+        public void initialiseConstraints(World world)
+        {
+            HindgeJointConstraint = new HingeJoint(world, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
+            HindgeJointConstraint.Motor.MaximumForce = 200f;
+            HindgeJointConstraint.Motor.IsEnabled = true;
         }
 
         public void SetJointAxis(Vector3 axis)
         {
             jointAxis = ToJVec(axis.Normalized());
-            HindgeJointConstraint.Remove();
-            HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
-            HindgeJointConstraint.Motor.MaximumForce = 200f;
+            if (HindgeJointConstraint != null)
+            {
+                HindgeJointConstraint.Remove();
+                HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
+                HindgeJointConstraint.Motor.MaximumForce = 200f;
+            }
         }
 
         public void SetJointAnchor(Vector3 anchor)
         {
             anchorPoint = ToJVec(anchor);
-            HindgeJointConstraint.Remove();
-            HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
-            HindgeJointConstraint.Motor.MaximumForce = 200f;
+            if (HindgeJointConstraint != null)
+            {
+                HindgeJointConstraint.Remove();
+                HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
+                HindgeJointConstraint.Motor.MaximumForce = 200f;
+            }
+        }
+
+        public void setBoneA(Bone bone)
+        {
+            this.BoneA = bone;
+            this.BoneA_ID = bone.BoneID;
+        }
+
+        public void setBoneB(Bone bone)
+        {
+            this.BoneB = bone;
+            this.BoneB_ID = bone.BoneID;
         }
 
 
@@ -98,13 +148,22 @@ namespace _3D_Engine.Classes.Ragdoll
             // Update the visual representation of the bone based on the rigid body's position and orientation
             Visual.setPosition(position);
             Visual.Draw();
+
+            if (HingeAxisVisual != null)
+            {
+                HingeAxisVisual.setPosition(position);
+                HingeAxisVisual.Draw();
+            }
             //Console.WriteLine($"Bone {name} Rotation: ({rot.X}, {rot.Y}, {rot.Z}, {rot.W})");
             //Console.WriteLine($"Visual {name} Rotation: ({Visual.GetOrientation().X}, {Visual.GetOrientation().Y}, {Visual.GetOrientation().Z}, {Visual.GetOrientation().W})");
         }
 
-        private JQuaternion GetCurrentRelativeOrientation()
+        public void destroy()
         {
-            return JQuaternion.Conjugate(BoneA.RB.Orientation) * BoneB.RB.Orientation;
+            Visual.Destroy();
+            HingeAxisVisual.Destroy();
+            HindgeJointConstraint?.Remove();
+            
         }
 
 

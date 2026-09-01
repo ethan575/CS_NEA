@@ -14,11 +14,18 @@ namespace _3D_Engine.Classes.Ragdoll
 {
     public class Bone: RagdollObjects
     {
+        public static int noOfBones = 0;
+
+        public int BoneID { get; private set; }
+
         public string name { get; set; }
         //public RigidBody RB { get; set; }
 
         public Bone(World world, WorldObject visual, Vector3 position, string name)   
         {
+            this.BoneID = Bone.noOfBones;
+            Bone.noOfBones++;
+
             this.Visual = visual;
             this.name = name;
 
@@ -48,6 +55,11 @@ namespace _3D_Engine.Classes.Ragdoll
             Visual.Draw();
             //Console.WriteLine($"Bone {name} Rotation: ({rot.X}, {rot.Y}, {rot.Z}, {rot.W})");
             //Console.WriteLine($"Visual {name} Rotation: ({Visual.GetOrientation().X}, {Visual.GetOrientation().Y}, {Visual.GetOrientation().Z}, {Visual.GetOrientation().W})");
+        }
+
+        public void setBoneID(int id)
+        {
+            this.BoneID = id;
         }
 
         static Vector3 FromJVec(JVector v)

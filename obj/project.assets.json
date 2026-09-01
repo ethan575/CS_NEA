@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net8.0-windows7.0": {
       "Jitter2/2.8.8": {
         "type": "package",
         "compile": {
@@ -650,7 +650,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net8.0-windows7.0": [
       "Jitter2 >= 2.8.8",
       "MathNet.Numerics >= 5.0.0",
       "OpenTK >= 4.9.4",
@@ -665,11 +665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.6 - builder\\3D Engine.csproj",
+      "projectUniqueName": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.7 - builder save load\\3D Engine.csproj",
       "projectName": "3D Engine",
-      "projectPath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.6 - builder\\3D Engine.csproj",
+      "projectPath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.7 - builder save load\\3D Engine.csproj",
       "packagesPath": "C:\\Users\\nicie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.6 - builder\\obj\\",
+      "outputPath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.7 - builder save load\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -680,7 +680,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net8.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -688,8 +688,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "projectReferences": {}
         }
       },
@@ -706,8 +706,8 @@
       "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
         "dependencies": {
           "Jitter2": {
             "target": "Package",
@@ -744,6 +744,9 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.316/PortableRuntimeIdentifierGraph.json"
