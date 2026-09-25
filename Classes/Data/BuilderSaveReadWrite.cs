@@ -104,8 +104,11 @@ namespace _3D_Engine.Classes.Data
                     newBone.RB.Position = TypeConvertHelper.ToJVec(position);
                     newBone.RB.Orientation = orientation;
                     newBone.setBoneID(BoneID);
+                    newBone.RB.AffectedByGravity = true;
 
-                    newBone.RB.MotionType = Jitter2.Dynamics.MotionType.Dynamic;
+                    newBone.RB.SetMassInertia(1);
+                    newBone.RB.Friction = 0.5f;
+                    newBone.RB.ApplyImpulse(new JVector(0, 1f, 0));
                     bones.Add(newBone);
                 }
 

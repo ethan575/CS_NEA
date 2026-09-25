@@ -44,7 +44,8 @@ namespace _3D_Engine.Classes.Ragdoll
             RB.Position = new JVector(position.X, position.Y, position.Z);
             RB.Orientation = ToJQuaternion(visual.GetOrientation());
             RB.AddShape(new PointCloudShape(verts));
-            
+            //RB.MotionType = MotionType.Dynamic;
+
         }
 
         public override void UpdateVisual()
@@ -55,6 +56,8 @@ namespace _3D_Engine.Classes.Ragdoll
             Visual.Draw();
             //Console.WriteLine($"Bone {name} Rotation: ({rot.X}, {rot.Y}, {rot.Z}, {rot.W})");
             //Console.WriteLine($"Visual {name} Rotation: ({Visual.GetOrientation().X}, {Visual.GetOrientation().Y}, {Visual.GetOrientation().Z}, {Visual.GetOrientation().W})");
+
+
         }
 
         public void setBoneID(int id)

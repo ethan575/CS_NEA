@@ -13,10 +13,15 @@ namespace _3D_Engine.Classes.physics
     public class PhysicsServer
     {
 
+        public static bool AllowedWorldStep = true;
+
         public void Update(float dt, World jitterWorld)
         {
-            
-            jitterWorld.Step(dt);
+            if (AllowedWorldStep)
+            {
+                //jitterWorld.Step(dt);
+                jitterWorld.Step(MathF.Min(dt, 1/30f));
+            }
 
             foreach (PhysicsObject obj in  SceneManager.CurrentScene.AllPhysicsObjects)
             {

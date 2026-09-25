@@ -1,4 +1,5 @@
 ﻿using _3D_Engine.Classes.Data;
+using _3D_Engine.Classes.NeuralNet;
 using _3D_Engine.Classes.Objects;
 using _3D_Engine.Classes.physics;
 using _3D_Engine.Classes.Ragdoll;
@@ -6,6 +7,9 @@ using Jitter2;
 using Jitter2.Collision.Shapes;
 using Jitter2.Dynamics;
 using Jitter2.LinearMath;
+using MathNet.Numerics.LinearAlgebra;
+using System;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Keys = OpenTK.Windowing.GraphicsLibraryFramework.Keys;
 using Vector3 = OpenTK.Mathematics.Vector3;
@@ -33,6 +37,7 @@ namespace _3D_Engine.Classes.Scenes
 
         RagdollBody body;
 
+        PhysicsObject convex1;
 
         public SimulationScene(Game game) : base(game)
         {
@@ -53,7 +58,7 @@ namespace _3D_Engine.Classes.Scenes
             // This method will be called in the main update loop of the game
 
             physicsServer.Update(dt, world);
-            body?.Update(dt);
+            
 
             if (game.KeyboardState.IsKeyPressed(Keys.Escape))
             {
@@ -79,6 +84,72 @@ namespace _3D_Engine.Classes.Scenes
                 }
             }
 
+            ////// test for savng a neural network and loading it back in, this is just a test and will be removed later/ changes
+            if (game.KeyboardState.IsKeyDown(Keys.LeftControl) && game.keyboardState.IsKeyPressed(Keys.S))
+            {
+                var NN = new NeuralNetwork(new int[] { 8, 7, 8, 1 }); //{ 12, 7, 8, 8 }
+
+                PhysicsServer.AllowedWorldStep = false;
+                using (var dialog = new SaveFileDialog())
+                {
+                    dialog.Title = "Save NN as";
+                    dialog.Filter = "NN File (*.nn)|*.nn";
+                    dialog.DefaultExt = "nn";
+                    dialog.AddExtension = true;
+                    dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
+
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string SavePath = dialog.FileName;
+
+
+                        NNSaveLoad.SaveNeuralNetwork(NN, SavePath);
+
+                        NeuralNetwork loaded = NNSaveLoad.LoadNeuralNetwork(SavePath);
+                        body.SetBrain(loaded);
+
+
+                        
+                        
+
+                        
+
+                        Console.WriteLine("Neural Network saved and loaded successfully.");
+                    }
+
+                    
+
+                }
+                PhysicsServer.AllowedWorldStep = true;
+
+
+            }
+
+            if (game.IsKeyPressed(Keys.Space))
+            {
+                var testM = Matrix<float>.Build.Random((body.Joints.Count * 6)+2, 1);
+
+                body.BrainNNFF(testM);
+            }
+
+            float u = 0.5f;
+
+            if (game.KeyboardState.IsKeyDown(Keys.W))
+            {
+                convex1.changeVelociy(Vector3.UnitZ * u);
+            }
+            if (game.KeyboardState.IsKeyDown(Keys.S))
+            {
+                convex1.changeVelociy(-Vector3.UnitZ * u);
+            }
+            if (game.KeyboardState.IsKeyDown(Keys.A))
+            {
+                convex1.changeVelociy(-Vector3.UnitX * u);
+            }
+            if (game.KeyboardState.IsKeyDown(Keys.D))
+            {
+                convex1.changeVelociy(Vector3.UnitX * u);
+            }
 
 
 
@@ -86,6 +157,7 @@ namespace _3D_Engine.Classes.Scenes
         public override void OnFrameRender(float dt)
         {
             // Implement simulation-specific rendering logic (e.g., drawing objects)
+            body?.Update(dt);
 
             foreach (var entity in SceneManager.RenderedEntities)
             {
@@ -114,6 +186,14 @@ namespace _3D_Engine.Classes.Scenes
             floor.Scale(2, 0.5f, 2);
             floor.setPosition(new Vector3(0, -10, 0));
 
+            RigidBody RB1 = world.CreateRigidBody();
+            RB1.AddShape(new BoxShape(1));
+            RB1.MotionType = MotionType.Dynamic;
+            convex1 = new PhysicsObject("convex1", shader, cubeVertex, this, game, RB1, color);
+            convex1.setMass(29f);
+            convex1.setObeyGravity(true);
+            convex1.Scale(0.5f);
+            convex1.setPosition(5f, 3f, 12f);
 
 
             IsReady = true;

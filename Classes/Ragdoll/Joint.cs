@@ -49,7 +49,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
 
             HindgeJointConstraint = new HingeJoint(world, boneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
-            HindgeJointConstraint.Motor.MaximumForce = 200f;
+            HindgeJointConstraint.Motor.MaximumForce = 400f;
             HindgeJointConstraint.Motor.IsEnabled = true;
 
 
@@ -146,8 +146,8 @@ namespace _3D_Engine.Classes.Ragdoll
         public override void UpdateVisual()
         {
             // Update the visual representation of the bone based on the rigid body's position and orientation
-            Visual.setPosition(position);
-            Visual.Draw();
+            Visual?.setPosition(position);
+            Visual?.Draw();
 
             if (HingeAxisVisual != null)
             {

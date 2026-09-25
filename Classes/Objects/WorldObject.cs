@@ -33,6 +33,7 @@ namespace _3D_Engine.Classes.Objects
             shader.SetMatrix4("model", WorldMatrix);
             shader.SetVector3("ObjColor", color);
             mesh.Draw();
+
         }
 
         public virtual void Start() { } // initialisation logic

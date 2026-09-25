@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4XiI5cP/Mt4=",
+  "dgSpecHash": "4MH/cut82X8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.4.7 - builder save load\\3D Engine.csproj",
+  "projectFilePath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v 1.5.6 control\\3D engine v1.5.7 - NN control\\3D Engine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicie\\.nuget\\packages\\jitter2\\2.8.8\\jitter2.2.8.8.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
-    "C:\\Users\\nicie\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.9\\microsoft.win32.systemevents.10.0.9.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\opentk\\4.9.4\\opentk.4.9.4.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\opentk.audio.openal\\4.9.4\\opentk.audio.openal.4.9.4.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\opentk.compute\\4.9.4\\opentk.compute.4.9.4.nupkg.sha512",
@@ -19,7 +18,6 @@
     "C:\\Users\\nicie\\.nuget\\packages\\opentk.windowing.desktop\\4.9.4\\opentk.windowing.desktop.4.9.4.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.9.4\\opentk.windowing.graphicslibraryframework.4.9.4.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\stbimagesharp\\2.30.15\\stbimagesharp.2.30.15.nupkg.sha512",
-    "C:\\Users\\nicie\\.nuget\\packages\\system.drawing.common\\10.0.9\\system.drawing.common.10.0.9.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

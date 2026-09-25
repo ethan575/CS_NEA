@@ -58,7 +58,8 @@ public class Game : GameWindow
 
         ///change this at some point////////////////////////
         ///// just starts with the simulation scene, will add a menu scene later 
-        SceneManager.CurrentScene = new SimulationScene(this);
+        //SceneManager.CurrentScene = new SimulationScene(this);
+        SceneManager.CurrentScene = new TestScene(this);
 
         shader.Use();
         shader.SetVector3("lightPos", new OpenTK.Mathematics.Vector3(-10.0f, 30.0f, -20.0f));

@@ -11,23 +11,38 @@ namespace _3D_Engine.Classes.NeuralNet
         public float bias; // activate even if low activation
     }
 
+    public struct SaveableModel // can be serialized and deserialized when needed
+    {
+        public List<NetworkLayer> NetworkLayers;
+        public List<Matrix<float>> NetworkWeights;
+        public int[] LayerDims;
+    }
 
 
 
     public class NeuralNetwork
     {
 
-        List<NetworkLayer> NetworkLayers = new List<NetworkLayer>();
+        public List<NetworkLayer> NetworkLayers = new List<NetworkLayer>();
         //𝑊0,2 means the weight from neuron 2 in the previous layer to neuron 0 in the next layer
         // Wij notation check notes
-        List<Matrix<float>> NetworkWeights = new List<Matrix<float>>();
-        int[] LayerDims;
+        public List<Matrix<float>> NetworkWeights = new List<Matrix<float>>();
+        public int[] LayerDims;
 
         public NeuralNetwork(int[] LayerDims)
         {
+            this.LayerDims = LayerDims;
             initializeWeights();
             initializeNetwork();
+            //
+        }
+
+        // for loading a model
+        public NeuralNetwork(int[] LayerDims, List<Matrix<float>> weights)
+        {
             this.LayerDims = LayerDims;
+            this.NetworkWeights = weights;
+            initializeNetwork();
         }
 
 
@@ -43,7 +58,7 @@ namespace _3D_Engine.Classes.NeuralNet
                         break;
 
                     default:
-                        if (!(i == LayerDims.Length - 1))
+                        if (i != LayerDims.Length - 1)
                         {
                             NetworkLayers.Add(new HiddenLayer(LayerDims[i], NetworkWeights[i]));
                             break;
@@ -58,16 +73,17 @@ namespace _3D_Engine.Classes.NeuralNet
         private void initializeWeights()////////////////////implement non random????
         {
             // between each layer
-            for (int i = 0; i < NetworkLayers.Count-2; i++)
+            for (int i = 0; i < LayerDims.Count() - 1; i++)
             {
-                Matrix<float> currentLayerWeight = Matrix<float>.Build.Random(NetworkLayers[i+1].neurons.Count, NetworkLayers[i].neurons.Count);
-                NetworkWeights.Add(currentLayerWeight); 
+                Matrix<float> currentLayerWeight = Matrix<float>.Build.Random(LayerDims[i + 1], LayerDims[i]);
+                NetworkWeights.Add(currentLayerWeight);
             }
         }
 
         public Matrix<float> GetNetworkOutput(Matrix<float> Input) // forward pass
         {
-            if (Input.ColumnCount != LayerDims[0] || Input.ColumnCount != 1)
+            //if (Input.ColumnCount != LayerDims[0] || Input.ColumnCount != 1)
+            if (Input.RowCount != LayerDims[0] || Input.ColumnCount != 1)
                 throw new InvalidDataException("Method only allows matrix with one column and must be the same rows as input layer");
 
             // 0 idx is the input and final idx is the output

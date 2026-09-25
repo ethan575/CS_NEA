@@ -124,6 +124,11 @@ namespace _3D_Engine.Classes.Objects
             position = FromJVec(Rbody.Position);
             rotation = FromJquaternion(Rbody.Orientation);
             rotation.Normalize();
+            //if (this.Rbody.MotionType == MotionType.Static)
+            //{
+            //                   // If the object is static, we don't want to update its position or rotation
+            //    return;
+            //}
             //Console.WriteLine(Rbody.Position);
         }
 
