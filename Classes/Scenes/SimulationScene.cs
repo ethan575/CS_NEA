@@ -7,12 +7,9 @@ using Jitter2;
 using Jitter2.Collision.Shapes;
 using Jitter2.Dynamics;
 using Jitter2.LinearMath;
-using MathNet.Numerics.LinearAlgebra;
-using System;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
 using Keys = OpenTK.Windowing.GraphicsLibraryFramework.Keys;
 using Vector3 = OpenTK.Mathematics.Vector3;
+
 
 
 // implement a simulation scene that inherits from the base Scene class
@@ -30,7 +27,8 @@ namespace _3D_Engine.Classes.Scenes
 
 
         // jitter physics world
-        World world = new World();
+        List<HeadlessSimulationScene> AllSimWorlds = new List<HeadlessSimulationScene>();
+        World ForegroundWorld = new World();
 
         Shader shader;
         PhysicsServer physicsServer;
@@ -38,6 +36,17 @@ namespace _3D_Engine.Classes.Scenes
         RagdollBody body;
 
         PhysicsObject convex1;
+
+        bool isFirstSimulationClick = true;
+
+        // simulation stuff
+        bool isSimulationRunning = false;
+        int populationSize = 10;
+        RagdollBody LastLoadedCreature;
+        NeuralNetwork LastSavedNN;
+        private bool backgroundPopulationHidden = false;
+        Generation currentGeneration = new Generation();
+
 
         public SimulationScene(Game game) : base(game)
         {
@@ -57,8 +66,18 @@ namespace _3D_Engine.Classes.Scenes
             // Implement simulation-specific update logic (e.g., physics, AI)
             // This method will be called in the main update loop of the game
 
-            physicsServer.Update(dt, world);
-            
+            physicsServer.Update(dt, AllSimWorlds, ForegroundWorld);
+
+            //dt is in seconds
+            if (isSimulationRunning)
+            {
+                currentGeneration.ActiveTimeLeft -= dt;
+                if (currentGeneration.ActiveTimeLeft <= 0)
+                {
+                    PrepareEndGeneration();
+                }
+            }
+
 
             if (game.KeyboardState.IsKeyPressed(Keys.Escape))
             {
@@ -78,16 +97,20 @@ namespace _3D_Engine.Classes.Scenes
                     if (dialog.ShowDialog() == DialogResult.OK)
                     {
                         string filePath = dialog.FileName;
-                        
-                        body = BuilderSaveReadWrite.BuilderLoadFile(filePath, world, shader, this);
+
+                        LastLoadedCreature = BuilderSaveReadWrite.BuilderLoadFile(filePath, ForegroundWorld, shader, this);
+                        body = LastLoadedCreature;
+
+                        AllSimWorlds.Add(new HeadlessSimulationScene(ForegroundWorld, body));
                     }
                 }
             }
 
-            ////// test for savng a neural network and loading it back in, this is just a test and will be removed later/ changes
+            //ctrl + s must dave the trained NN
+            //// test for savng a neural network and loading it back in, this is just a test and some will be removed later/ changes
             if (game.KeyboardState.IsKeyDown(Keys.LeftControl) && game.keyboardState.IsKeyPressed(Keys.S))
             {
-                var NN = new NeuralNetwork(new int[] { 8, 7, 8, 1 }); //{ 12, 7, 8, 8 }
+                var NN = new NeuralNetwork(new int[] { 8, 7, 8, 8 }); //{ 12, 7, 8, 8 } { 8, 7, 8, 8 }
 
                 PhysicsServer.AllowedWorldStep = false;
                 using (var dialog = new SaveFileDialog())
@@ -105,31 +128,131 @@ namespace _3D_Engine.Classes.Scenes
 
                         NNSaveLoad.SaveNeuralNetwork(NN, SavePath);
 
-                        NeuralNetwork loaded = NNSaveLoad.LoadNeuralNetwork(SavePath);
-                        body.SetBrain(loaded);
+                        Console.WriteLine("Neural Network saved  successfully.");
+                    }
+                }
+            }
 
+            // opening NN file
+            if (game.KeyboardState.IsKeyDown(Keys.LeftControl) && game.keyboardState.IsKeyPressed(Keys.O))
+            {
 
-                        
-                        
+                PhysicsServer.AllowedWorldStep = false;
+                using (var dialog = new OpenFileDialog())
+                {
+                    dialog.Title = "Open NN file";
+                    dialog.Filter = "NN File (*.nn)|*.nn";
+                    dialog.DefaultExt = "nn";
+                    dialog.AddExtension = true;
+                    dialog.InitialDirectory = System.IO.Directory.GetCurrentDirectory();
 
-                        
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string SavePath = dialog.FileName;
+
+                        LastSavedNN = NNSaveLoad.LoadNeuralNetwork(SavePath);
+                        NeuralNetwork loaded = LastSavedNN;
+
+                        currentGeneration.Population = new List<NeuralNetwork>();
+
+                        if (body != null)
+                        {
+                            body.SetBrain(loaded);
+                            currentGeneration.Population.Add(loaded);
+                        }
+
+                        else
+                            MessageBox.Show("There is no body to attatch a brain to.", "Error", MessageBoxButtons.OK);
 
                         Console.WriteLine("Neural Network saved and loaded successfully.");
                     }
 
-                    
+
 
                 }
-                PhysicsServer.AllowedWorldStep = true;
+            }
+
+            //!!!! Implement saving the fittest
+
+
+            if (game.IsKeyDown(Keys.Space))
+            {
+                //var testM = Matrix<float>.Build.Random((body.Bones.Count * 6) + 2, 1);
+                var testM = body.GetBrainInputMatrix();
+                body.BrainNNFF(testM);
+                //body.BrainNNFF(body.GetBrainInputMatrix());
+                Console.Write(testM);
 
 
             }
 
-            if (game.IsKeyPressed(Keys.Space))
+            if (game.IsKeyReleased(Keys.Space))
             {
-                var testM = Matrix<float>.Build.Random((body.Joints.Count * 6)+2, 1);
+                body.ResetAngularVelocities();
+            }
 
-                body.BrainNNFF(testM);
+
+            if (game.KeyboardState.IsKeyPressed(Keys.Tab))
+            {
+                if (isFirstSimulationClick && LastLoadedCreature != null && LastSavedNN != null)
+                {
+                    isFirstSimulationClick = false;
+                    PhysicsServer.AllowedWorldStep = true;
+
+                    
+
+                    //AllSimWorlds.Add(new HeadlessSimulationScene(ForegroundWorld, body));
+
+                    for (int i = 0; i < populationSize - 1; i++) // '-1' because the first one is foreground
+                    {
+                        var newWorld = new World();
+
+                        RigidBody floorRB = newWorld.CreateRigidBody();
+                        floorRB.AddShape(new BoxShape(new JVector(40, 1f, 40)));
+                        floorRB.MotionType = MotionType.Static;
+                        floorRB.Position = new JVector(0, -10, 0);
+
+                        //!!!!!!!!!!!!!!! create a method for bnes and joints so theu can be clone to be added to new worlds - done
+                        RagdollBody newBody = LastLoadedCreature.Clone(newWorld);
+                        currentGeneration.Population.Add(newBody.Brain);
+                        // clone NN and set it to the new body
+                        //newBody.SetBrain(LastSavedNN);
+                        AllSimWorlds.Add(new HeadlessSimulationScene(newWorld, newBody));
+                    }
+                    AllSimWorlds.ForEach(scene => scene.ragdollBody.Joints.ForEach(joint => joint.Visual.visible = false));
+                    AllSimWorlds.ForEach(scene => scene.ragdollBody.Bones.ForEach(bone => bone.Visual.visible = true));
+
+                    isSimulationRunning = true;
+                }
+
+            }
+
+            if (game.KeyboardState.IsKeyPressed(Keys.P))
+            {
+
+                for (int i = 0; i < AllSimWorlds.Count; i++)
+                {
+                    var scene = AllSimWorlds[i];
+                    var com = scene.ragdollBody.COMPosition;
+                    Console.WriteLine(
+                        $"World {i}: bodies={scene.world.RigidBodies.Count} " +
+                        $"COM=({com.X:F2}, {com.Y:F2}, {com.Z:F2}) " +
+                        $"vel={scene.ragdollBody.BodyVelocity.Length():F2}");
+                }
+            }
+
+            if (game.KeyboardState.IsKeyPressed(Keys.H))
+            {
+                for (int i = 1; i < AllSimWorlds.Count; i++)
+                {
+                    var scene = AllSimWorlds[i];
+                    foreach (Bone bone in scene.ragdollBody.Bones)
+                    {
+                        bone.Visual.visible = backgroundPopulationHidden;
+                        Console.WriteLine($"Bone {bone.name} visibility: {bone.Visual.visible}");
+                    }
+                }
+                backgroundPopulationHidden = !backgroundPopulationHidden;
             }
 
             float u = 0.5f;
@@ -154,10 +277,27 @@ namespace _3D_Engine.Classes.Scenes
 
 
         }
+
+
         public override void OnFrameRender(float dt)
         {
             // Implement simulation-specific rendering logic (e.g., drawing objects)
-            body?.Update(dt);
+            //body?.Update(dt);
+
+            // ragdoll updates but it falls thorugh?
+            // somethings not running update, in physics serevr?
+            if (isFirstSimulationClick)
+            {
+                body?.Update(dt);
+            }
+            else
+                foreach (var scene in AllSimWorlds)
+                {
+
+                    scene.ragdollBody.Update(dt);
+
+                }
+
 
             foreach (var entity in SceneManager.RenderedEntities)
             {
@@ -171,6 +311,7 @@ namespace _3D_Engine.Classes.Scenes
 
             Vector3 color = new Vector3(0.5f, 0.5f, 0.5f);
 
+
             // Set up the initial state of the simulation scene (e.g., create objects, set positions)
             float[] jointVertex = ModelImporter.LoadModel("models/Raw/joint.stl");
             float[] boneVertex = ModelImporter.LoadModel("models/Raw/bone.stl");
@@ -179,14 +320,14 @@ namespace _3D_Engine.Classes.Scenes
 
 
 
-            RigidBody floorRB = world.CreateRigidBody();
+            RigidBody floorRB = ForegroundWorld.CreateRigidBody();
             floorRB.AddShape(new BoxShape(new JVector(40, 1f, 40)));
             floorRB.MotionType = MotionType.Static;
             floor = new PhysicsObject("floor", shader, floorVertex, this, game, floorRB, new Vector3(1, 1, 1));
             floor.Scale(2, 0.5f, 2);
             floor.setPosition(new Vector3(0, -10, 0));
 
-            RigidBody RB1 = world.CreateRigidBody();
+            RigidBody RB1 = ForegroundWorld.CreateRigidBody();
             RB1.AddShape(new BoxShape(1));
             RB1.MotionType = MotionType.Dynamic;
             convex1 = new PhysicsObject("convex1", shader, cubeVertex, this, game, RB1, color);
@@ -196,7 +337,9 @@ namespace _3D_Engine.Classes.Scenes
             convex1.setPosition(5f, 3f, 12f);
 
 
+
             IsReady = true;
+            PhysicsServer.AllowedWorldStep = false;
         }
 
         public override void destroyScene()
@@ -208,16 +351,60 @@ namespace _3D_Engine.Classes.Scenes
             {
                 //entity.mesh.Dispose();
                 entity.Destroy();
-                world.Clear();
+                ForegroundWorld.Clear();
 
             }
 
             // also clear the colliders from the static list
-            world.Clear();
-            world.Dispose();
+            ForegroundWorld.Clear();
+            ForegroundWorld.Dispose();
             SceneManager.CurrentScene?.AllPhysicsObjects.Clear();
 
 
+        }
+
+        // start of evolve for next gen
+        // fitness values as ragdoll data  required
+        public void PrepareEndGeneration()
+        {
+
+            foreach (HeadlessSimulationScene scene in AllSimWorlds)
+            {
+                scene.ragdollBody.EndOfGenerationTasks();
+            }
+
+            // give each network a fitness score based on the ragdoll performance
+            for (int i = 0; i < AllSimWorlds.Count; i++)
+            {
+                var scene = AllSimWorlds[i];
+                // calculate fitness score based on ragdoll performance
+                float fitnessScore = FitnessEval.EvaluateFitness(scene.ragdollBody);
+                scene.ragdollBody.Brain.FitnessScore = fitnessScore;
+            }
+            // best fitness score first so the fittest neural networks are at the top 
+            currentGeneration.Population = currentGeneration.Population.OrderByDescending(nn => nn.FitnessScore).ToList();
+
+
+            //!!!!!!!!!!!! populate new generation with evolved neural networks
+            // the ragdolls are still the same instance, but their neural networks are updated with the evolved ones
+
+            NNTainer.Generations.Add(currentGeneration);
+
+            //List<NeuralNetwork> newNNs = NNTainer.EvolveGeneration(currentGeneration);
+            //currentGeneration = new Generation();
+
+            // positions and velocities are reset
+
+        }
+
+        public void StartNextGeneration()
+        {
+            // reset
+            AllSimWorlds.ForEach(scene =>
+            {
+                scene.ragdollBody.ResetAngularVelocities();
+                scene.ragdollBody.setPostion(JVector.Zero);
+            });
         }
     }
 }

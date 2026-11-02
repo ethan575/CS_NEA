@@ -19,12 +19,13 @@ namespace _3D_Engine.Classes.NeuralNet
         }
 
         // also need to apply squash func
-        public override Matrix<float> getOutput(Matrix<float> inputMatrix)
+        public override Matrix<float> getOutputAfterWeights(Matrix<float> inputMatrix)
         {
             InputMatrix = inputMatrix;
             neuronValues = MatrixOperationHelper.NormalizeAngleRadMatrix(InputMatrix);
 
-            Matrix<float> output = LayerWeightRight * neuronValues + NeuronBias;
+            //Matrix<float> output = LayerWeightRight * neuronValues + LayerBias;
+            Matrix<float> output = LayerWeightRight * neuronValues;
             return MatrixOperationHelper.ApplyLeakyReluToMatrix(output);
 
         }

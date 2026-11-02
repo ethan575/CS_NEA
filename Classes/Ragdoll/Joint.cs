@@ -166,6 +166,16 @@ namespace _3D_Engine.Classes.Ragdoll
             
         }
 
+        public override RagdollObjects Clone(World world)
+        {
+            //WorldObject VisualClone = Visual.Clone();
+
+            Joint clone = new Joint(world, Visual, anchorPoint, HingeAxisVisual);
+            clone.BoneA_ID = this.BoneA_ID;
+            clone.BoneB_ID = this.BoneB_ID;
+            return clone;
+        }
+
 
         static Vector3 FromJVec(JVector v)
         {

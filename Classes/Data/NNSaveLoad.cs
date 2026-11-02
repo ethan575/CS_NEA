@@ -13,7 +13,7 @@ namespace _3D_Engine.Classes.Data
             {
 
                 SaveWeights(nn.NetworkWeights, bw); // save all nn weights
-
+                SaveBiases(nn.ConstructBiasList(), bw); // save all nn biases
                 SaveArray(nn.LayerDims, bw);
             }
         }
@@ -21,16 +21,17 @@ namespace _3D_Engine.Classes.Data
         public static NeuralNetwork LoadNeuralNetwork(string filePath)
         {
             List<Matrix<float>> Weights = new List<Matrix<float>>();
+            List<Matrix<float>> Biases = new List<Matrix<float>>();
             int[] LayerDims;
 
             using (var br = new BinaryReader(File.OpenRead(filePath)))
             {
                 Weights = LoadWeights(filePath, br);
-
+                Biases = LoadBiases(filePath, br);
                 LoadArray(br, out LayerDims);
             }
 
-            NeuralNetwork LoadedNetwork = new NeuralNetwork(LayerDims, Weights);
+            NeuralNetwork LoadedNetwork = new NeuralNetwork(LayerDims, Weights, Biases);
             return LoadedNetwork;
         }
 
@@ -46,6 +47,15 @@ namespace _3D_Engine.Classes.Data
 
         }
 
+        private static void SaveBiases(List<Matrix<float>> biases, BinaryWriter bw)
+        {
+            bw.Write(biases.Count); // how many bias matrices to read
+            foreach (Matrix<float> matrix in biases)
+            {
+                SaveMatrix(matrix, bw);
+            }
+        }
+
         private static List<Matrix<float>> LoadWeights(string filePath, BinaryReader br)
         {
             List<Matrix<float>> weights = new List<Matrix<float>>();
@@ -58,6 +68,17 @@ namespace _3D_Engine.Classes.Data
             }
 
             return weights;
+        }
+
+        private static List<Matrix<float>> LoadBiases(string filePath, BinaryReader br)
+        {
+            List<Matrix<float>> biases = new List<Matrix<float>>();
+            int numberOfMatrices = br.ReadInt32();
+            for (int i = 0; i < numberOfMatrices; i++)
+            {
+                biases.Add(LoadMatrix(br));
+            }
+            return biases;
         }
 
         private static void SaveMatrix(Matrix<float> m, BinaryWriter bw)

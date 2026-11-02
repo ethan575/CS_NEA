@@ -11,3 +11,18 @@ rendered entities list: done
 added framerate independant moving using delta time -> done
 add ragdoll -> done
 motor -> partially done with 1 DOF
+
+
+
+
+
+
+
+In simulationScene -> createScene() 
+	add maybe a button when pressed many world instantiated and simulated at once
+
+	then complete adding all creatures fromm each world into a generation object
+	then use this gneration to evolve genomes for next generations
+
+
+	#Actually evolve gens now

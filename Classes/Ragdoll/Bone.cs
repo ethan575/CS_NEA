@@ -32,7 +32,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
             // Create a rigid body for the bone
             RB = world.CreateRigidBody();
-            RB.SetMassInertia(1);
+            RB.SetMassInertia(0.1f);
             RB.Friction = 0.5f;
             //RB.AddShape(new BoxShape(shapeDims*0.5f));
             List<JVector> verts = new List<JVector>();
@@ -63,6 +63,15 @@ namespace _3D_Engine.Classes.Ragdoll
         public void setBoneID(int id)
         {
             this.BoneID = id;
+        }
+
+        public override RagdollObjects Clone(Jitter2.World world)
+        {
+            WorldObject visualClone = Visual.Clone();
+
+            Bone clone = new Bone(world, visualClone, FromJVec(RB.Position), name);
+            clone.BoneID = this.BoneID;
+            return clone;
         }
 
         static Vector3 FromJVec(JVector v)

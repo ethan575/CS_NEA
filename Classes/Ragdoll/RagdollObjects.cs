@@ -32,13 +32,24 @@ namespace _3D_Engine.Classes.Ragdoll
                 //}
             }
         }
+
         public WorldObject Visual { get; set; }
         public RigidBody RB { get; set; }
 
         public Vector3 Position { get; set; }
+
+        public RagdollObjects()
+        {
+
+        }
+
         public virtual void UpdateVisual()
         {
-            // This method should be overridden in derived classes to update the visual representation of the object.
+        }
+
+        public virtual RagdollObjects Clone(Jitter2.World world)
+        {
+            return null;
         }
     }
 }

@@ -16,9 +16,18 @@ namespace _3D_Engine.Classes.NeuralNet
             
         }
 
-        public override Matrix<float> getOutput(Matrix<float> inputMatrix)
+        public override void SetLayerBias(Matrix<float> newBias, int biasDim)
         {
-            return MatrixOperationHelper.TanhMatrix(neuronValues);
+            if (!(newBias.ColumnCount == 1)) throw new InvalidDataException("Method only allows matrix with one column");
+            else if (newBias.RowCount != biasDim) throw new InvalidDataException("New bias matrix row count must match the biasDim parameter");
+            this.LayerBias = newBias;
+        }
+
+        public override Matrix<float> getOutputAfterWeights(Matrix<float> inputMatrix)
+        {
+            this.InputMatrix = inputMatrix;
+            //return MatrixOperationHelper.TanhMatrix(neuronValues);
+            return inputMatrix;
         }
 
     }

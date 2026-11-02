@@ -82,11 +82,11 @@ namespace _3D_Engine.Classes.NeuralNet.Extras
                 throw new InvalidDataException("Method only allows matrix with one column and must be the same rows as input layer");
 
             // 0 idx is the input and final idx is the output
-            Matrix<float> CurrentOutput = NetworkLayers[0].getOutput(Input); // overidden every layer
+            Matrix<float> CurrentOutput = NetworkLayers[0].getOutputAfterWeights(Input); // overidden every layer
 
             for (int i = 1; i < NetworkLayers.Count; i++) // from second layer to last
             {
-                CurrentOutput = NetworkLayers[i].getOutput(CurrentOutput);
+                CurrentOutput = NetworkLayers[i].getOutputAfterWeights(CurrentOutput);
             }
             return CurrentOutput;
         }

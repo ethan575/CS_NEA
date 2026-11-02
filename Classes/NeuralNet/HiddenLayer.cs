@@ -11,11 +11,11 @@ namespace _3D_Engine.Classes.NeuralNet
             this.LayerWeightRight = LayerWeightRight;
         }
 
-        public override Matrix<float> getOutput(Matrix<float> inputMatrix)
+        public override Matrix<float> getOutputAfterWeights(Matrix<float> inputMatrix)
         {
             InputMatrix = inputMatrix;
 
-            Matrix<float> output = LayerWeightRight * inputMatrix + NeuronBias;
+            Matrix<float> output = LayerWeightRight * inputMatrix + LayerBias;
             return MatrixOperationHelper.ApplyLeakyReluToMatrix(output); // n x 1 dim
 
         }

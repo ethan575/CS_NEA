@@ -24,10 +24,22 @@ namespace _3D_Engine.Classes.Objects
 
             SceneManager.RenderedEntities.Add(this);
         }
+
+        public WorldObject Clone()
+        {
+            WorldObject clone = new WorldObject(this.Name, shader, mesh.vertices, scene, color);
+            clone.position = position;
+            clone.rotation = rotation;
+            clone.scale = scale;
+            return clone;
+        }
+
         // try only use in onrenderframe, otherwise the shader will be used multiple times and cause performance issues
         // pretty much deprecated, use recursive drawing func instead
         public void Draw()
         {
+            if (!visible) return;
+
             shader.Use();
             //ApplyTransformation();
             shader.SetMatrix4("model", WorldMatrix);

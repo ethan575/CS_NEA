@@ -1,12 +1,4 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
-using MathNet.Numerics.LinearAlgebra.Complex;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Matrix = MathNet.Numerics.LinearAlgebra.Complex.Matrix;
 
 namespace _3D_Engine.Classes.NeuralNet
 {
@@ -14,7 +6,7 @@ namespace _3D_Engine.Classes.NeuralNet
     {
         public List<Neuron> neurons;
         public Matrix<float> neuronValues;
-        public Matrix<float> NeuronBias;
+        public Matrix<float> LayerBias { get; protected set; }
 
         public Matrix<float> InputMatrix { get; set; }
 
@@ -22,19 +14,17 @@ namespace _3D_Engine.Classes.NeuralNet
         {
             neurons = new List<Neuron>();
 
-            for (int i = 0;  i < numberofNeurons; i++)
+            for (int i = 0; i < numberofNeurons; i++)
             {
                 neurons.Add(new Neuron
                 {
-                    /////!!!!!!!!!!!!
                     value = 0,
-                    bias = 0
                 });
             }
 
-            NeuronBias = Matrix<float>.Build.Dense(numberofNeurons, 1, 0f);
-
-            //////// implement bias matrix initialisation
+            //!! number of neurons must be same as the column count like 7x8 matrix need 7x1 bias
+            // default bias is 0
+            LayerBias = Matrix<float>.Build.Dense(numberofNeurons, 1, 0f);
 
             neuronValues = Matrix<float>.Build.Dense(numberofNeurons, 1, 0.0f);
         }
@@ -44,7 +34,7 @@ namespace _3D_Engine.Classes.NeuralNet
             neurons = new List<Neuron>();
 
             if (!(NeuronBiases.ColumnCount == 1)) throw new InvalidDataException("Method only allows matrix with one column");
-            this.NeuronBias = NeuronBiases;
+            this.LayerBias = NeuronBiases;
 
             foreach (float _bias in NeuronBiases.Column(0).AsArray())
             {
@@ -58,7 +48,19 @@ namespace _3D_Engine.Classes.NeuralNet
             neuronValues = Matrix<float>.Build.Dense(NeuronBiases.Column(0).AsArray().Length, 1, 0.0f);
         }
 
-        public virtual Matrix<float> getOutput(Matrix<float> inputMatrix)
+        public virtual void SetLayerBias(Matrix<float> newBias)
+        {
+            if (!(newBias.ColumnCount == 1)) throw new InvalidDataException("Method only allows matrix with one column");
+            //else if (newBias.RowCount != this.neurons.Count) throw new InvalidDataException("New bias matrix row count must match the row count of the right weight matrix");
+
+            this.LayerBias = newBias;
+
+        }
+        public virtual void SetLayerBias(Matrix<float> newBias, int biasDim)
+        {
+        }
+
+        public virtual Matrix<float> getOutputAfterWeights(Matrix<float> inputMatrix)
         {
             return Matrix<float>.Build.SparseIdentity(0);
         }

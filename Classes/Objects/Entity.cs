@@ -12,6 +12,7 @@ namespace _3D_Engine.Classes.Objects
         public string Name { get; set; }
         public Shader shader { get; set; }
         public Mesh mesh { get; protected set; }
+        public bool visible { get; set; } = true;
         public Vector3 color { get; set; } = Vector3.Zero;
         public Vector3 defaultColor { get; set; } = Vector3.Zero;
 
