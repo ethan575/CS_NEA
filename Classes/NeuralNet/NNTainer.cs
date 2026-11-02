@@ -44,7 +44,22 @@ namespace _3D_Engine.Classes.NeuralNet
         public static List<Generation> Generations = new List<Generation>();
         public static Generation? LatestGen;
         
+        public Generation EvolveGeneration(List<NeuralNetwork> population, int NoEliteNNs = 5)
+        {
+            Generation newGen = new Generation();
+            newGen.Population = population;
 
+            List<NeuralNetwork> EliteNNs = new List<NeuralNetwork>(newGen.Population.Take(NoEliteNNs)); // keep these the same
+            List<NeuralNetwork> NewNNs = new List<NeuralNetwork>(newGen.Population.Skip(NoEliteNNs)); // evolve
+
+            // new network is just a combination of the entire weight matrix of fittest
+            // 
+
+
+            Generations.Add(newGen);
+            LatestGen = newGen;
+            return newGen;
+        }
 
 
     }

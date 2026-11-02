@@ -383,12 +383,14 @@ namespace _3D_Engine.Classes.Scenes
             }
             // best fitness score first so the fittest neural networks are at the top 
             currentGeneration.Population = currentGeneration.Population.OrderByDescending(nn => nn.FitnessScore).ToList();
+            NNTainer.Generations.Add(currentGeneration);
 
+            currentGeneration = NNTainer.EvolveGeneration(currentGeneration);
 
             //!!!!!!!!!!!! populate new generation with evolved neural networks
             // the ragdolls are still the same instance, but their neural networks are updated with the evolved ones
 
-            NNTainer.Generations.Add(currentGeneration);
+
 
             //List<NeuralNetwork> newNNs = NNTainer.EvolveGeneration(currentGeneration);
             //currentGeneration = new Generation();

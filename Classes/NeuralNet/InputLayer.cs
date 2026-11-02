@@ -22,7 +22,8 @@ namespace _3D_Engine.Classes.NeuralNet
         public override Matrix<float> getOutputAfterWeights(Matrix<float> inputMatrix)
         {
             InputMatrix = inputMatrix;
-            neuronValues = MatrixOperationHelper.NormalizeAngleRadMatrix(InputMatrix);
+            neuronValues = InputMatrix;
+            //neuronValues = MatrixOperationHelper.NormalizeAngleRadMatrix(InputMatrix);
 
             //Matrix<float> output = LayerWeightRight * neuronValues + LayerBias;
             Matrix<float> output = LayerWeightRight * neuronValues;

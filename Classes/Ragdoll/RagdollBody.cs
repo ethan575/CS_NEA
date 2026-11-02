@@ -98,18 +98,18 @@ namespace _3D_Engine.Classes.Ragdoll
             int LastWrittenIdx = 0;
 
             // all joint values 
-            for (int i = 0; i < Joints.Count; i+=2) // each joint has 2 inputs
+            for (int i = 0; i < Joints.Count; i++) // each joint has 2 inputs
             {
                 Joint joint = Joints[i];
-                inputMatrix[i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (2*MathF.PI);
-                inputMatrix[i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
+                inputMatrix[2*i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (2*MathF.PI);
+                inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
 
-                LastWrittenIdx = i + 1;
+                
             }
-
+            LastWrittenIdx = 2 * Joints.Count;
             // general body info
             // max velocity = 100
-          
+
             inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.X /100;
             inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Y / 100;
             inputMatrix[LastWrittenIdx + 3, 0] = this.BodyVelocity.Z / 100;
