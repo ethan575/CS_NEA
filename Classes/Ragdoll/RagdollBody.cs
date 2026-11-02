@@ -110,15 +110,15 @@ namespace _3D_Engine.Classes.Ragdoll
             // general body info
             // max velocity = 100
 
-            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.X /100;
-            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Y / 100;
-            inputMatrix[LastWrittenIdx + 3, 0] = this.BodyVelocity.Z / 100;
+            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X /100;
+            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 100;
+            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 100;
 
             JVector DirToTarget = (TargetPosition - this.ComputeCentreOfMass());
             DirToTarget = JVector.Normalize(DirToTarget);
-            inputMatrix[LastWrittenIdx + 4, 0] = DirToTarget.X;
-            inputMatrix[LastWrittenIdx + 5, 0] = DirToTarget.Y;
-            inputMatrix[LastWrittenIdx + 6, 0] = DirToTarget.Z;
+            inputMatrix[LastWrittenIdx + 3, 0] = DirToTarget.X;
+            inputMatrix[LastWrittenIdx + 4, 0] = DirToTarget.Y;
+            inputMatrix[LastWrittenIdx + 5, 0] = DirToTarget.Z;
 
             LastWrittenIdx = LastWrittenIdx + 6;
 
@@ -147,10 +147,10 @@ namespace _3D_Engine.Classes.Ragdoll
             // iterate through the output and apply forces/torques to the bones
             for (int i = 0; i < Joints.Count; i++)
             {
-                var t = Math.Clamp(output[i, 0] * 4000, -1200, 1200);
+                var t = Math.Clamp(output[i, 0] * 1200, -1200, 1200);
                 Joints[i].HindgeJointConstraint.Motor.TargetVelocity = t;//*10000;
                 EnergyUsed += Math.Abs(t / 128);
-                Console.WriteLine("t: " + output[i, 0] * 400);
+                Console.WriteLine("t: " + output[i, 0]  * 1200);
                 //Console.WriteLine(Joints[i].HindgeJointConstraint.Motor.TargetVelocity);
             }
 

@@ -27,7 +27,7 @@ namespace _3D_Engine.Classes.NeuralNet
 
             //Matrix<float> output = LayerWeightRight * neuronValues + LayerBias;
             Matrix<float> output = LayerWeightRight * neuronValues;
-            return MatrixOperationHelper.ApplyLeakyReluToMatrix(output);
+            return output;
 
         }
 

@@ -37,23 +37,26 @@ namespace _3D_Engine.Classes.NeuralNet
         }
     }
 
-    public static class NNTainer
+    public static class NNTrainer
     {
 
         static Random rng = new Random();
         public static List<Generation> Generations = new List<Generation>();
         public static Generation? LatestGen;
-        
-        public Generation EvolveGeneration(List<NeuralNetwork> population, int NoEliteNNs = 5)
+
+        private static List<NeuralNetwork> EliteNNs = new List<NeuralNetwork>(); 
+        private static List<NeuralNetwork> NewNNs = new List<NeuralNetwork>();
+
+        public static Generation EvolveGeneration(List<NeuralNetwork> population, int NoEliteNNs = 5)
         {
             Generation newGen = new Generation();
             newGen.Population = population;
 
-            List<NeuralNetwork> EliteNNs = new List<NeuralNetwork>(newGen.Population.Take(NoEliteNNs)); // keep these the same
-            List<NeuralNetwork> NewNNs = new List<NeuralNetwork>(newGen.Population.Skip(NoEliteNNs)); // evolve
+            EliteNNs = new List<NeuralNetwork>(newGen.Population.Take(NoEliteNNs)); // keep these the same
+            NewNNs = new List<NeuralNetwork>(newGen.Population.Skip(NoEliteNNs)); // evolve
 
-            // new network is just a combination of the entire weight matrix of fittest
-            // 
+            //!!!!!!!!!! new network is just a combination of the entire weight matrix of fittest
+            // !! make sure to mutate weight as well as bias
 
 
             Generations.Add(newGen);

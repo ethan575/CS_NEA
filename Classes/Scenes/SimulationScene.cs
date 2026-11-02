@@ -181,7 +181,7 @@ namespace _3D_Engine.Classes.Scenes
                 var testM = body.GetBrainInputMatrix();
                 body.BrainNNFF(testM);
                 //body.BrainNNFF(body.GetBrainInputMatrix());
-                Console.Write(testM);
+                //Console.Write(testM);
 
 
             }
@@ -383,9 +383,9 @@ namespace _3D_Engine.Classes.Scenes
             }
             // best fitness score first so the fittest neural networks are at the top 
             currentGeneration.Population = currentGeneration.Population.OrderByDescending(nn => nn.FitnessScore).ToList();
-            NNTainer.Generations.Add(currentGeneration);
+            NNTrainer.Generations.Add(currentGeneration);
 
-            currentGeneration = NNTainer.EvolveGeneration(currentGeneration);
+            currentGeneration = NNTrainer.EvolveGeneration(currentGeneration.Population);
 
             //!!!!!!!!!!!! populate new generation with evolved neural networks
             // the ragdolls are still the same instance, but their neural networks are updated with the evolved ones

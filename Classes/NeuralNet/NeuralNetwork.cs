@@ -61,7 +61,7 @@ namespace _3D_Engine.Classes.NeuralNet
                 {
                     case 0:
                         NetworkLayer inputLayer = new InputLayer(Matrix<float>.Build.Random(LayerDims[i], 1), NetworkWeights[i]);
-                        inputLayer.SetLayerBias(Matrix<float>.Build.Random(LayerDims[i], 1));
+                        inputLayer.SetLayerBias(Matrix<float>.Build.Dense(LayerDims[i], 1, 0f));
                         NetworkLayers.Add(inputLayer);
                         break;
 
@@ -70,13 +70,13 @@ namespace _3D_Engine.Classes.NeuralNet
                         {
                             NetworkLayer hiddenLayer = new HiddenLayer(LayerDims[i], NetworkWeights[i]);
                             //hiddenLayer.SetLayerBias(Matrix<float>.Build.Random(LayerDims[i], 1), NetworkWeights[i]);
-                            hiddenLayer.SetLayerBias(Matrix<float>.Build.Random(LayerDims[i + 1], 1));
+                            hiddenLayer.SetLayerBias(Matrix<float>.Build.Dense(LayerDims[i+1], 1, 0f));
                             NetworkLayers.Add(hiddenLayer);
                             break;
                         }
 
-                        NetworkLayer outputLayer = new OutputLayer(Matrix<float>.Build.Random(LayerDims[i], 1));
-                        outputLayer.SetLayerBias(Matrix<float>.Build.Random(LayerDims[i], 1), LayerDims[i]);
+                        NetworkLayer outputLayer = new OutputLayer(Matrix<float>.Build.Dense(LayerDims[i], 1, 0f));
+                        outputLayer.SetLayerBias(Matrix<float>.Build.Dense(LayerDims[i], 1, 0f), LayerDims[i]);
                         NetworkLayers.Add(outputLayer);
                         break;
 
@@ -119,11 +119,13 @@ namespace _3D_Engine.Classes.NeuralNet
         private void initializeWeights()////////////////////implement non random????
         {
             // between each layer
-            for (int i = 0; i < LayerDims.Count() - 1; i++)
+            for (int i = 0; i < LayerDims.Length - 1; i++)
             {
                 Random rng = new Random();
-                // why mostly negative weight values
-                Matrix<float> currentLayerWeight = Matrix<float>.Build.Random(LayerDims[i + 1], LayerDims[i], new Random().Next(-1000000, 1000000));
+                // He initialization: stddev = 1/sqrt(n) where n is the number of inputs to the layer to keep size of input and output similar
+                // so output size doesnt scale with number of inputs
+                float stDev = 1f / (float)Math.Sqrt(LayerDims[i]);
+                Matrix<float> currentLayerWeight = Matrix<float>.Build.Random(LayerDims[i + 1], LayerDims[i], new Normal(0, stDev));
                 //Matrix<float> currentLayerWeight = Matrix<float>.Build.Dense(LayerDims[i+1], LayerDims[i], (i, j) => -(i % 2) * (float)rng.NextDouble() * 2 );
                 NetworkWeights.Add(currentLayerWeight);
             }
