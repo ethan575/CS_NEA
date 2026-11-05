@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\classes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:classes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\classes\\drawnobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:classes\\drawnobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\classes\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:classes\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\classes\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:classes\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|2D Engine.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 234,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "shader.vert",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Shaders\\shader.vert",
+              "RelativeDocumentMoniker": "Shaders\\shader.vert",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Shaders\\shader.vert",
+              "RelativeToolTip": "Shaders\\shader.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-05T22:37:08.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DrawnObject.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\DrawnObject.cs",
+              "RelativeDocumentMoniker": "Classes\\DrawnObject.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\DrawnObject.cs",
+              "RelativeToolTip": "Classes\\DrawnObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T22:24:05.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\Entity.cs",
+              "RelativeDocumentMoniker": "Classes\\Entity.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\Entity.cs",
+              "RelativeToolTip": "Classes\\Entity.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA1wDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T21:51:52.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Transform.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\Transform.cs",
+              "RelativeDocumentMoniker": "Classes\\Transform.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\Transform.cs",
+              "RelativeToolTip": "Classes\\Transform.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T21:45:14.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Mesh.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\Mesh.cs",
+              "RelativeDocumentMoniker": "Classes\\Mesh.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\Mesh.cs",
+              "RelativeToolTip": "Classes\\Mesh.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T19:31:58.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "game.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\game.cs",
+              "RelativeDocumentMoniker": "Classes\\game.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Classes\\game.cs",
+              "RelativeToolTip": "Classes\\game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T19:20:09.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T19:11:35.286Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\ragdoll\\joint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\joint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\ragdoll\\ragdollbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\ragdollbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\scenes\\simulationscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\simulationscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\nntrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\nntrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\neuralnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\neuralnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\scenes\\headlesssimulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\headlesssimulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\fitnesseval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\fitnesseval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\networklayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\networklayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\inputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\inputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\ragdoll\\ragdollbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\ragdollbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\outputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\outputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\hiddenlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\hiddenlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\neuralnet\\matrixoperationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\matrixoperationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\scenes\\testscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\testscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\data\\nnsaveload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\data\\nnsaveload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\update log.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:update log.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\objects\\worldobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\objects\\worldobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\objects\\physicsobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\objects\\physicsobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\ragdoll\\bone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\bone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\ragdoll\\ragdollobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\ragdollobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\physics\\physicsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\physics\\physicsserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\data\\buildersavereadwrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\data\\buildersavereadwrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\scenes\\buildscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\buildscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\cam\\editorcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\cam\\editorcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\classes\\cam\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\cam\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\nicie\\onedrive\\desktop\\ethan\\c# projects\\nea\\3d engine v1.5.9 evolve\\shaders\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:shaders\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 404,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MatrixOperationHelper.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\MatrixOperationHelper.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\MatrixOperationHelper.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\MatrixOperationHelper.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\MatrixOperationHelper.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T22:19:04.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "update log.txt",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\update log.txt",
+              "RelativeDocumentMoniker": "update log.txt",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\update log.txt",
+              "RelativeToolTip": "update log.txt",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-10-27T21:59:08.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WorldObject.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Objects\\WorldObject.cs",
+              "RelativeDocumentMoniker": "Classes\\Objects\\WorldObject.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Objects\\WorldObject.cs",
+              "RelativeToolTip": "Classes\\Objects\\WorldObject.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T23:42:34.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HeadlessSimulation.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\HeadlessSimulation.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\HeadlessSimulation.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\HeadlessSimulation.cs",
+              "RelativeToolTip": "Classes\\Scenes\\HeadlessSimulation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T22:07:53.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PhysicsServer.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\physics\\PhysicsServer.cs",
+              "RelativeDocumentMoniker": "Classes\\physics\\PhysicsServer.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\physics\\PhysicsServer.cs",
+              "RelativeToolTip": "Classes\\physics\\PhysicsServer.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAcwBkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T21:56:09.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NNTrainer.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NNTrainer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NNTrainer.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NNTrainer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NNTrainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T16:18:53.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FitnessEval.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\FitnessEval.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\FitnessEval.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\FitnessEval.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\FitnessEval.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowCUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T16:18:51.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SimulationScene.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\SimulationScene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\SimulationScene.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\SimulationScene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\SimulationScene.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAcwL0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T21:25:02.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InputLayer.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\InputLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\InputLayer.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\InputLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\InputLayer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T21:56:30.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OutputLayer.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\OutputLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\OutputLayer.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\OutputLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\OutputLayer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T21:45:35.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HiddenLayer.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\HiddenLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\HiddenLayer.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\HiddenLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\HiddenLayer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T21:09:04.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NetworkLayer.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NetworkLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NetworkLayer.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NetworkLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NetworkLayer.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T21:03:24.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NeuralNetwork.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NeuralNetwork.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NeuralNetwork.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NeuralNetwork.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NeuralNetwork.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAnwKEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-19T21:16:52.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NNSaveLoad.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Data\\NNSaveLoad.cs",
+              "RelativeDocumentMoniker": "Classes\\Data\\NNSaveLoad.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Data\\NNSaveLoad.cs",
+              "RelativeToolTip": "Classes\\Data\\NNSaveLoad.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAD4v2kAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-03T18:53:12.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Bone.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\Bone.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\Bone.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\Bone.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\Bone.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwEcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-31T21:59:39.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Joint.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\Joint.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\Joint.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\Joint.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\Joint.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAkwLAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-31T17:21:50.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Cam\\Camera.cs",
+              "RelativeDocumentMoniker": "Classes\\Cam\\Camera.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Cam\\Camera.cs",
+              "RelativeToolTip": "Classes\\Cam\\Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T20:42:05.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EditorCam.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Cam\\EditorCam.cs",
+              "RelativeDocumentMoniker": "Classes\\Cam\\EditorCam.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Cam\\EditorCam.cs",
+              "RelativeToolTip": "Classes\\Cam\\EditorCam.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAcwAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T21:39:40.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "game.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\game.cs",
+              "RelativeDocumentMoniker": "Classes\\game.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\game.cs",
+              "RelativeToolTip": "Classes\\game.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAMwGkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T20:56:19.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\Scene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\Scene.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\Scene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\Scene.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-31T11:02:08.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RagdollBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollBuilder.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\RagdollBuilder.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollBuilder.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\RagdollBuilder.cs",
+              "ViewState": "AgIAAPkBAAAAAAAAAAAAABMCAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T21:37:35.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TestScene.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\TestScene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\TestScene.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\TestScene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\TestScene.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwDoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-31T21:54:18.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BuilderSaveReadWrite.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Data\\BuilderSaveReadWrite.cs",
+              "RelativeDocumentMoniker": "Classes\\Data\\BuilderSaveReadWrite.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Data\\BuilderSaveReadWrite.cs",
+              "RelativeToolTip": "Classes\\Data\\BuilderSaveReadWrite.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAjwEsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T22:30:02.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PhysicsObject.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Objects\\PhysicsObject.cs",
+              "RelativeDocumentMoniker": "Classes\\Objects\\PhysicsObject.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Objects\\PhysicsObject.cs",
+              "RelativeToolTip": "Classes\\Objects\\PhysicsObject.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAWwBUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T10:37:14.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RagdollBody.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollBody.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\RagdollBody.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollBody.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\RagdollBody.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAD4v2cAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T10:56:15.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RagdollObjects.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollObjects.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\RagdollObjects.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollObjects.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\RagdollObjects.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwCgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-31T17:21:49.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Shader.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Shaders\\Shader.cs",
+              "RelativeDocumentMoniker": "Shaders\\Shader.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Shaders\\Shader.cs",
+              "RelativeToolTip": "Shaders\\Shader.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T21:09:14.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BuildScene.cs",
+              "DocumentMoniker": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\BuildScene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\BuildScene.cs",
+              "ToolTip": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.5.9 evolve\\Classes\\Scenes\\BuildScene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\BuildScene.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T21:37:46.84Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

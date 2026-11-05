@@ -1,0 +1,341 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\ragdoll\\ragdollbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\ragdollbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\scenes\\simulationscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\simulationscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\objects\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\objects\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\neuralnet\\neuralnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\neuralnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\neuralnet\\hiddenlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\hiddenlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\data\\buildersavereadwrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\data\\buildersavereadwrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\ragdoll\\ragdollobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\ragdollobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\ragdoll\\bone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\bone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\neuralnet\\inputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\inputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\neuralnet\\outputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\outputlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\neuralnet\\networklayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\networklayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\data\\nnsaveload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\data\\nnsaveload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\cam\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\cam\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\objects\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\objects\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\scenes\\buildscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\buildscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\ragdoll\\joint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\joint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\objects\\physicsobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\objects\\physicsobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\classes\\scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.8 - nn control\\shaders\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:shaders\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 404,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NetworkLayer.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\NetworkLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NetworkLayer.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\NetworkLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NetworkLayer.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAuwEAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:28.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mesh.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Objects\\Mesh.cs",
+              "RelativeDocumentMoniker": "Classes\\Objects\\Mesh.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Objects\\Mesh.cs",
+              "RelativeToolTip": "Classes\\Objects\\Mesh.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Objects\\Entity.cs",
+              "RelativeDocumentMoniker": "Classes\\Objects\\Entity.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Objects\\Entity.cs",
+              "RelativeToolTip": "Classes\\Objects\\Entity.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SimulationScene.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Scenes\\SimulationScene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\SimulationScene.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Scenes\\SimulationScene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\SimulationScene.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAkwIIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HiddenLayer.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\HiddenLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\HiddenLayer.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\HiddenLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\HiddenLayer.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InputLayer.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\InputLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\InputLayer.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\InputLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\InputLayer.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RagdollBody.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\RagdollBody.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\RagdollBody.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\RagdollBody.cs*",
+              "RelativeToolTip": "Classes\\Ragdoll\\RagdollBody.cs*",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAuwE4AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OutputLayer.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\OutputLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\OutputLayer.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\OutputLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\OutputLayer.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwB0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NeuralNetwork.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\NeuralNetwork.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NeuralNetwork.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\NeuralNet\\NeuralNetwork.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NeuralNetwork.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAwFgAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Joint.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\Joint.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\Joint.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\Joint.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\Joint.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAASwDMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BuilderSaveReadWrite.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Data\\BuilderSaveReadWrite.cs",
+              "RelativeDocumentMoniker": "Classes\\Data\\BuilderSaveReadWrite.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Data\\BuilderSaveReadWrite.cs",
+              "RelativeToolTip": "Classes\\Data\\BuilderSaveReadWrite.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAiwG0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bone.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\Bone.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\Bone.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\Bone.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\Bone.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwCIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NNSaveLoad.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Data\\NNSaveLoad.cs",
+              "RelativeDocumentMoniker": "Classes\\Data\\NNSaveLoad.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Data\\NNSaveLoad.cs",
+              "RelativeToolTip": "Classes\\Data\\NNSaveLoad.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAnwBkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PhysicsObject.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Objects\\PhysicsObject.cs",
+              "RelativeDocumentMoniker": "Classes\\Objects\\PhysicsObject.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Objects\\PhysicsObject.cs",
+              "RelativeToolTip": "Classes\\Objects\\PhysicsObject.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAnwB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RagdollObjects.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\RagdollObjects.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\RagdollObjects.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Ragdoll\\RagdollObjects.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\RagdollObjects.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Scenes\\Scene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\Scene.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Scenes\\Scene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\Scene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAACBjwCoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Shader.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Shaders\\Shader.cs",
+              "RelativeDocumentMoniker": "Shaders\\Shader.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Shaders\\Shader.cs",
+              "RelativeToolTip": "Shaders\\Shader.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "game.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\game.cs",
+              "RelativeDocumentMoniker": "Classes\\game.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\game.cs",
+              "RelativeToolTip": "Classes\\game.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAUwGkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Cam\\Camera.cs",
+              "RelativeDocumentMoniker": "Classes\\Cam\\Camera.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Cam\\Camera.cs",
+              "RelativeToolTip": "Classes\\Cam\\Camera.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAMwEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BuildScene.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Scenes\\BuildScene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\BuildScene.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.8 - NN control\\Classes\\Scenes\\BuildScene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\BuildScene.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.115Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

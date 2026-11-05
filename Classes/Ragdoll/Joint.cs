@@ -173,6 +173,13 @@ namespace _3D_Engine.Classes.Ragdoll
             Joint clone = new Joint(world, Visual, anchorPoint, HingeAxisVisual);
             clone.BoneA_ID = this.BoneA_ID;
             clone.BoneB_ID = this.BoneB_ID;
+            clone.setBoneA((Bone)this.BoneA.Clone(world));
+            clone.setBoneB((Bone)this.BoneB.Clone(world));
+
+            clone.HindgeJointConstraint = new HingeJoint(world, clone.BoneA.RB, clone.BoneB.RB, anchorPoint, jointAxis, true);
+            clone.HindgeJointConstraint.Motor.MaximumForce = 400f;
+            clone.HindgeJointConstraint.Motor.IsEnabled = true;
+    
             return clone;
         }
 

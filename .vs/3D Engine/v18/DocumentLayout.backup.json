@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\neuralnet\\nntrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\nntrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\neuralnet\\neuralnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\neuralnetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\cam\\editorcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\cam\\editorcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\neuralnet\\fitnesseval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\fitnesseval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\ragdoll\\ragdollbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\ragdoll\\ragdollbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\scenes\\simulationscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\scenes\\simulationscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|c:\\users\\20rodrigues.ethan\\onedrive - poole high school\\computer science\\3d engine v1.5.9 evolve\\classes\\neuralnet\\hiddenlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9188BC64-6A4B-418F-A477-A9293C13F8A8}|3D Engine.csproj|solutionrelative:classes\\neuralnet\\hiddenlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 404,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NNTrainer.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NNTrainer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NNTrainer.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NNTrainer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NNTrainer.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAowEkAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T13:58:06.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditorCam.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\Cam\\EditorCam.cs",
+              "RelativeDocumentMoniker": "Classes\\Cam\\EditorCam.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\Cam\\EditorCam.cs",
+              "RelativeToolTip": "Classes\\Cam\\EditorCam.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwJEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T08:00:24.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FitnessEval.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\FitnessEval.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\FitnessEval.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\FitnessEval.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\FitnessEval.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:35:27.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "game.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\game.cs",
+              "RelativeDocumentMoniker": "Classes\\game.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\game.cs",
+              "RelativeToolTip": "Classes\\game.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:20:38.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NeuralNetwork.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NeuralNetwork.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\NeuralNetwork.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\NeuralNetwork.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\NeuralNetwork.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAwKEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T13:37:08.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HiddenLayer.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\HiddenLayer.cs",
+              "RelativeDocumentMoniker": "Classes\\NeuralNet\\HiddenLayer.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\NeuralNet\\HiddenLayer.cs",
+              "RelativeToolTip": "Classes\\NeuralNet\\HiddenLayer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T13:32:50.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SimulationScene.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\Scenes\\SimulationScene.cs",
+              "RelativeDocumentMoniker": "Classes\\Scenes\\SimulationScene.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\Scenes\\SimulationScene.cs",
+              "RelativeToolTip": "Classes\\Scenes\\SimulationScene.cs",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAqwHQBAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:22:36.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RagdollBody.cs",
+              "DocumentMoniker": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollBody.cs",
+              "RelativeDocumentMoniker": "Classes\\Ragdoll\\RagdollBody.cs",
+              "ToolTip": "C:\\Users\\20Rodrigues.Ethan\\OneDrive - Poole High School\\Computer science\\3D engine v1.5.9 evolve\\Classes\\Ragdoll\\RagdollBody.cs",
+              "RelativeToolTip": "Classes\\Ragdoll\\RagdollBody.cs",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAawOsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T08:16:29.058Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

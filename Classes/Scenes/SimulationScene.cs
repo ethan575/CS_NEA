@@ -41,7 +41,7 @@ namespace _3D_Engine.Classes.Scenes
 
         // simulation stuff
         bool isSimulationRunning = false;
-        int populationSize = 10;
+        int populationSize = 20;
         RagdollBody LastLoadedCreature;
         NeuralNetwork LastSavedNN;
         private bool backgroundPopulationHidden = false;
@@ -177,12 +177,17 @@ namespace _3D_Engine.Classes.Scenes
 
             if (game.IsKeyDown(Keys.Space))
             {
-                //var testM = Matrix<float>.Build.Random((body.Bones.Count * 6) + 2, 1);
-                var testM = body.GetBrainInputMatrix();
-                body.BrainNNFF(testM);
-                //body.BrainNNFF(body.GetBrainInputMatrix());
-                //Console.Write(testM);
-
+                ////var testM = Matrix<float>.Build.Random((body.Bones.Count * 6) + 2, 1);
+                //var inputM = body.GetBrainInputMatrix();
+                //body.BrainNNFF(inputM);
+                ////body.BrainNNFF(body.GetBrainInputMatrix());
+                //Console.Write(inputM);
+                for (int i = 0; i < AllSimWorlds.Count; i++)
+                {
+                    var scene = AllSimWorlds[i];
+                    var inputM = scene.ragdollBody.GetBrainInputMatrix();
+                    scene.ragdollBody.BrainNNFF(inputM);
+                }
 
             }
 
@@ -368,7 +373,7 @@ namespace _3D_Engine.Classes.Scenes
         public void PrepareEndGeneration()
         {
 
-            foreach (HeadlessSimulationScene scene in AllSimWorlds)
+            foreach (HeadlessSimulationScene scene in AllSimWorlds) // includes foreground world
             {
                 scene.ragdollBody.EndOfGenerationTasks();
             }
@@ -383,20 +388,24 @@ namespace _3D_Engine.Classes.Scenes
             }
             // best fitness score first so the fittest neural networks are at the top 
             currentGeneration.Population = currentGeneration.Population.OrderByDescending(nn => nn.FitnessScore).ToList();
-            NNTrainer.Generations.Add(currentGeneration);
+            NNTrainer.Generations.Add(currentGeneration.Copy());
 
             currentGeneration = NNTrainer.EvolveGeneration(currentGeneration.Population);
 
-            //!!!!!!!!!!!! populate new generation with evolved neural networks
+            // new generation is the evolved NN
+            // give evolved NNs a ragdoll
             // the ragdolls are still the same instance, but their neural networks are updated with the evolved ones
-
-
+            for (int i = 0; i < AllSimWorlds.Count; i++)
+            {
+                var scene = AllSimWorlds[i];
+                scene.ragdollBody.SetBrain(currentGeneration.Population[i]);
+            }
 
             //List<NeuralNetwork> newNNs = NNTainer.EvolveGeneration(currentGeneration);
             //currentGeneration = new Generation();
 
             // positions and velocities are reset
-
+            StartNextGeneration();
         }
 
         public void StartNextGeneration()
