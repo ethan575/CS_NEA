@@ -1,5 +1,13 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+# Visual Studio cache
+.vs/
 
-/.vs/3D Engine/FileContentIndex
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# OneDrive temp files
+~$*
