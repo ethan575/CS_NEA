@@ -193,7 +193,7 @@ namespace _3D_Engine.Classes.Scenes
 
             if (game.IsKeyReleased(Keys.Space))
             {
-                body.ResetAngularVelocities();
+                AllSimWorlds.ForEach(s => s.ragdollBody.ResetAngularVelocities());
             }
 
 

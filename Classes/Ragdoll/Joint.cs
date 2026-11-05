@@ -183,6 +183,18 @@ namespace _3D_Engine.Classes.Ragdoll
             return clone;
         }
 
+        public Joint Clone(World world, Bone newBoneA, Bone newBoneB)
+        {
+            Joint clone = new Joint(world, Visual, anchorPoint, HingeAxisVisual);
+            clone.setBoneA(newBoneA);
+            clone.setBoneB(newBoneB);
+
+            clone.HindgeJointConstraint = new HingeJoint(world, newBoneA.RB, newBoneB.RB, anchorPoint, jointAxis, true);
+            clone.HindgeJointConstraint.Motor.MaximumForce = 400f;
+            clone.HindgeJointConstraint.Motor.IsEnabled = true;
+            return clone;
+        }
+
 
         static Vector3 FromJVec(JVector v)
         {

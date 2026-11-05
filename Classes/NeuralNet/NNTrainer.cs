@@ -67,8 +67,8 @@ namespace _3D_Engine.Classes.NeuralNet
         private static List<NeuralNetwork> EliteNNs = new List<NeuralNetwork>();
         private static List<NeuralNetwork> NewNNs = new List<NeuralNetwork>();
 
-        private static float PNetworkMutates = 0.6f; // chance of mutation
-        private static float mutationRate = 0.1f; // chance of  element mutation
+        private static float PNetworkMutates = 0.8f; // chance of mutation
+        private static float mutationRate = 0.5f; // chance of  element mutation
 
         public static Generation EvolveGeneration(List<NeuralNetwork> population, int NoEliteNNs = 5)
         {

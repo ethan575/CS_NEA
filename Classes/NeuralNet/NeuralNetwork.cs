@@ -124,7 +124,7 @@ namespace _3D_Engine.Classes.NeuralNet
                 Random rng = new Random();
                 // He initialization: stddev = sqrt(2/n) where n is the number of inputs to the layer to keep size of input and output similar
                 // so output size doesnt scale with number of inputs
-                float stDev = (float)Math.Sqrt(2/LayerDims[i]);
+                float stDev = (float)Math.Sqrt(2f/LayerDims[i]);
                 Matrix<float> currentLayerWeight = Matrix<float>.Build.Random(LayerDims[i + 1], LayerDims[i], new Normal(0, stDev));
                 //Matrix<float> currentLayerWeight = Matrix<float>.Build.Dense(LayerDims[i+1], LayerDims[i], (i, j) => -(i % 2) * (float)rng.NextDouble() * 2 );
                 NetworkWeights.Add(currentLayerWeight);

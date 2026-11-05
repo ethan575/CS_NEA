@@ -101,7 +101,7 @@ namespace _3D_Engine.Classes.Ragdoll
             for (int i = 0; i < Joints.Count; i++) // each joint has 2 inputs
             {
                 Joint joint = Joints[i];
-                inputMatrix[2*i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (2*MathF.PI);
+                inputMatrix[2*i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI);
                 inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
 
                 
@@ -214,20 +214,31 @@ namespace _3D_Engine.Classes.Ragdoll
             }
         }
 
+        //public RagdollBody Clone(World world)
+        //{
+        //    List<Bone> clonedBones = new List<Bone>();
+        //    foreach (var bone in Bones)
+        //    {
+        //        clonedBones.Add((Bone)bone.Clone(world));
+        //    }
+        //    List<Joint> clonedJoints = new List<Joint>();
+        //    foreach (var joint in Joints)
+        //    {
+        //        clonedJoints.Add((Joint)joint.Clone(world));
+        //    }
+        //    RagdollBody clonedRagdoll = new RagdollBody(clonedBones, clonedJoints);
+        //    clonedRagdoll.SetBrain(this.Brain.Copy()); 
+        //    return clonedRagdoll;
+        //}
         public RagdollBody Clone(World world)
         {
-            List<Bone> clonedBones = new List<Bone>();
-            foreach (var bone in Bones)
-            {
-                clonedBones.Add((Bone)bone.Clone(world));
-            }
-            List<Joint> clonedJoints = new List<Joint>();
-            foreach (var joint in Joints)
-            {
-                clonedJoints.Add((Joint)joint.Clone(world));
-            }
+            List<Bone> clonedBones = Bones.Select(b => (Bone)b.Clone(world)).ToList(); //fupicate of bones
+            var byId = clonedBones.ToDictionary(b => b.BoneID); // dict, key = boneID value = cloned bone
+
+            List<Joint> clonedJoints = Joints.Select(j => j.Clone(world, byId[j.BoneA.BoneID], byId[j.BoneB.BoneID])).ToList(); //existong bones
+
             RagdollBody clonedRagdoll = new RagdollBody(clonedBones, clonedJoints);
-            clonedRagdoll.SetBrain(this.Brain.Copy()); 
+            clonedRagdoll.SetBrain(this.Brain.Copy());
             return clonedRagdoll;
         }
 
