@@ -21,6 +21,8 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public float EnergyUsed = 0;
 
+        private float period = 1f; // period of the sine wave for the clock input
+
         public FitnessObjective[] fitnessObjectives = new FitnessObjective[]
         {
             // ragdoll is the parameter in lambda function
@@ -103,9 +105,10 @@ namespace _3D_Engine.Classes.Ragdoll
             {
                 Joint joint = Joints[i];
                 inputMatrix[2*i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI);
-                inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
+                inputMatrix[2 * i + 1, 0] = joint.AngularVelocityRad() / MathF.PI;
+                //inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
 
-                
+
             }
             LastWrittenIdx = 2 * Joints.Count;
             // general body info
@@ -125,12 +128,13 @@ namespace _3D_Engine.Classes.Ragdoll
             inputMatrix[LastWrittenIdx + 5, 0] = DirToTarget.Z;
 
             // sin cos clock
-            inputMatrix[LastWrittenIdx + 6, 0] = MathF.Sin(clock);
-            inputMatrix[LastWrittenIdx + 7, 0] = MathF.Cos(clock);
+            inputMatrix[LastWrittenIdx + 6, 0] = MathF.Sin(2f * MathF.PI * clock / period);
+            inputMatrix[LastWrittenIdx + 7, 0] = MathF.Cos(2f * MathF.PI * clock / period);
 
             //LastWrittenIdx = LastWrittenIdx + 6;
 
-
+            Console.WriteLine("Input Matrix: ");
+            Console.WriteLine(inputMatrix.ToString());
 
             return inputMatrix;
         }
@@ -149,7 +153,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
             Matrix<float> output = Brain.GetNetworkOutput(input);
 
-            Console.Write("");
+            //Console.Write("");
             // Process the output to apply forces or torques to the bones
             //!! may need to fix the target angle function 
             // iterate through the output and apply forces/torques to the bones
@@ -163,7 +167,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
                 Joints[i].HindgeJointConstraint.Motor.TargetVelocity = t;//*10000;
                 EnergyUsed += Math.Abs(t / 128);
-                Console.WriteLine("t: " + output[i, 0]  * 1200);
+                //Console.WriteLine("t: " + output[i, 0] * 1200);
                 //Console.WriteLine(Joints[i].HindgeJointConstraint.Motor.TargetVelocity);
             }
 

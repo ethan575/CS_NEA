@@ -37,7 +37,7 @@ namespace _3D_Engine.Classes.NeuralNet
         {
             if (EnergyUsed == 0)
                 return 0;
-            return 1f/(1f/EnergyUsed); // less energy used = higher fitness
+            return 1f/(1f+EnergyUsed); // less energy used = higher fitness
         }
 
     }

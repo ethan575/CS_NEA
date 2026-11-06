@@ -30,6 +30,8 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public WorldObject HingeAxisVisual { get; set; }
 
+        public JVector localAxis;
+
         /// <summary>
         ///joint
         /// </summary>
@@ -54,7 +56,7 @@ namespace _3D_Engine.Classes.Ragdoll
             HindgeJointConstraint.Motor.MaximumForce = 400f;
             HindgeJointConstraint.Motor.IsEnabled = true;
 
-
+            localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
         }
 
         public Joint(World world, WorldObject Visual, JVector anchorPoint, WorldObject hingeAxisVisual) // for builder when bones not present yet
@@ -67,6 +69,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
             this.anchorPoint = anchorPoint;
             this.HingeAxisVisual = hingeAxisVisual;
+
         }
 
         public Joint(World world, Bone boneA, Bone boneB, WorldObject visual,
@@ -87,6 +90,8 @@ namespace _3D_Engine.Classes.Ragdoll
             HindgeJointConstraint = new HingeJoint(world, boneA.RB, boneB.RB, anchorPoint, jointAxis, true);
             HindgeJointConstraint.Motor.MaximumForce = 400f;   // same as your other constructor
             HindgeJointConstraint.Motor.IsEnabled = true;
+
+            localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
         }
 
         public void initialiseConstraints(World world)
@@ -94,6 +99,7 @@ namespace _3D_Engine.Classes.Ragdoll
             HindgeJointConstraint = new HingeJoint(world, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
             HindgeJointConstraint.Motor.MaximumForce = 200f;
             HindgeJointConstraint.Motor.IsEnabled = true;
+            localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
         }
 
         public void SetJointAxis(Vector3 axis)
@@ -105,6 +111,7 @@ namespace _3D_Engine.Classes.Ragdoll
                 HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
                 HindgeJointConstraint.Motor.MaximumForce = 200f;
             }
+            localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
         }
 
         public void SetJointAnchor(Vector3 anchor)
@@ -134,7 +141,7 @@ namespace _3D_Engine.Classes.Ragdoll
         public float AngularVelocityRad()
         {
             JVector relativeAngularVelocity = BoneB.RB.AngularVelocity - BoneA.RB.AngularVelocity;
-            JVector axisWorld = JVector.Transform(jointAxis, BoneA.RB.Orientation);
+            JVector axisWorld = JVector.Transform(localAxis, BoneA.RB.Orientation);
             float angularVelocityAlongAxis = JVector.Dot(relativeAngularVelocity, axisWorld);
             return angularVelocityAlongAxis;
         }   
@@ -183,11 +190,12 @@ namespace _3D_Engine.Classes.Ragdoll
             clone.BoneB_ID = this.BoneB_ID;
             clone.setBoneA((Bone)this.BoneA.Clone(world));
             clone.setBoneB((Bone)this.BoneB.Clone(world));
-
+            clone.jointAxis = jointAxis;
             clone.HindgeJointConstraint = new HingeJoint(world, clone.BoneA.RB, clone.BoneB.RB, anchorPoint, jointAxis, true);
             clone.HindgeJointConstraint.Motor.MaximumForce = 400f;
             clone.HindgeJointConstraint.Motor.IsEnabled = true;
-    
+            clone.localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
+
             return clone;
         }
 
