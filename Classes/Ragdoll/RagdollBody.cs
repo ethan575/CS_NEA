@@ -28,6 +28,7 @@ namespace _3D_Engine.Classes.Ragdoll
             new FitnessObjective(0.5f, ragdoll => Objectives.EvalEnergyUsed(ragdoll.EnergyUsed))
         };
 
+        private float clock = 0f;
 
         public RagdollBody(List<Bone> bones, List<Joint> joints)
         {
@@ -37,11 +38,20 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void SetBrain(NeuralNetwork brain)
         {
-            // each bone has 6 inputs (velocity and rotation)
-            // target position
-            // current position
+            /* 
+         inputs = [
+        each joint angle,
+        each joint angular velocity,
+        COM velocity,
+        direction to target,
+        sin
+        cos
+        Reference bone faceing direction (e.g., forward vector of the torso)
 
-            if (brain.LayerDims[0] != (this.Joints.Count * 2) + 6 )
+        ]
+         */
+
+            if (brain.LayerDims[0] != (this.Joints.Count * 2) + 8 )
             {
                 throw new ArgumentException("Input layer size must match the number of bones times 6 and additional 2.");
             }
@@ -81,16 +91,7 @@ namespace _3D_Engine.Classes.Ragdoll
             return total * (1/totalMass);
         }
 
-        /* 
-         inputs = [
-        each joint angle,
-        each joint angular velocity,
-        COM velocity,
-        direction to target,
-        Reference bone faceing direction (e.g., forward vector of the torso)
-
-        ]
-         */
+        
 
         public Matrix<float> GetBrainInputMatrix()
         {
@@ -110,17 +111,24 @@ namespace _3D_Engine.Classes.Ragdoll
             // general body info
             // max velocity = 100
 
-            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X /100;
-            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 100;
-            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 100;
+            // body velocity
+            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X /20;
+            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 20;
+            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 20;
 
+            //target dir
             JVector DirToTarget = (TargetPosition - this.ComputeCentreOfMass());
-            DirToTarget = JVector.Normalize(DirToTarget);
+            float dist = DirToTarget.Length();
+            DirToTarget = dist > 1e-4f ? DirToTarget * (1f / dist) : JVector.Zero;
             inputMatrix[LastWrittenIdx + 3, 0] = DirToTarget.X;
             inputMatrix[LastWrittenIdx + 4, 0] = DirToTarget.Y;
             inputMatrix[LastWrittenIdx + 5, 0] = DirToTarget.Z;
 
-            LastWrittenIdx = LastWrittenIdx + 6;
+            // sin cos clock
+            inputMatrix[LastWrittenIdx + 6, 0] = MathF.Sin(clock);
+            inputMatrix[LastWrittenIdx + 7, 0] = MathF.Cos(clock);
+
+            //LastWrittenIdx = LastWrittenIdx + 6;
 
 
 
@@ -147,7 +155,12 @@ namespace _3D_Engine.Classes.Ragdoll
             // iterate through the output and apply forces/torques to the bones
             for (int i = 0; i < Joints.Count; i++)
             {
-                var t = Math.Clamp(output[i, 0] * 1200, -1200, 1200);
+                //var t = Math.Clamp(output[i, 0] * 1200, -1200, 1200);
+                // BrainNNFF, when applying outputs
+                float o = output[i, 0];
+                if (float.IsNaN(o) || float.IsInfinity(o)) o = 0f;
+                var t = Math.Clamp(o * 1200, -1200, 1200);
+
                 Joints[i].HindgeJointConstraint.Motor.TargetVelocity = t;//*10000;
                 EnergyUsed += Math.Abs(t / 128);
                 Console.WriteLine("t: " + output[i, 0]  * 1200);
@@ -188,6 +201,8 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void Update(float dt)
         {
+            clock += dt;
+
             foreach (var bone in Bones)
             {
                 bone.UpdateVisual();

@@ -26,6 +26,8 @@ namespace _3D_Engine.Classes.Ragdoll
         public JVector anchorPoint { get; private set; }
         public JVector jointAxis { get; private set; } = JVector.UnitZ;
 
+        public float AngularVelocity { get; private set; }
+
         public WorldObject HingeAxisVisual { get; set; }
 
         /// <summary>
@@ -65,6 +67,26 @@ namespace _3D_Engine.Classes.Ragdoll
 
             this.anchorPoint = anchorPoint;
             this.HingeAxisVisual = hingeAxisVisual;
+        }
+
+        public Joint(World world, Bone boneA, Bone boneB, WorldObject visual,
+             JVector anchor, JVector axis, float stiffness, float angularDamping)
+        {
+            this.JointID = Joint.noOfJoints;
+            Joint.noOfJoints++;
+
+            setBoneA(boneA);   // also sets BoneA_ID
+            setBoneB(boneB);
+            this.Visual = visual;
+
+            this.anchorPoint = anchor;
+            this.jointAxis = axis.Length() > 1e-6f ? JVector.Normalize(axis) : JVector.UnitZ;
+            this.stiffness = stiffness;
+            this.angularDamping = angularDamping;
+
+            HindgeJointConstraint = new HingeJoint(world, boneA.RB, boneB.RB, anchorPoint, jointAxis, true);
+            HindgeJointConstraint.Motor.MaximumForce = 400f;   // same as your other constructor
+            HindgeJointConstraint.Motor.IsEnabled = true;
         }
 
         public void initialiseConstraints(World world)
@@ -109,29 +131,13 @@ namespace _3D_Engine.Classes.Ragdoll
         }
 
 
-        // create own PD controller for target angles
-        // https://stackoverflow.com/questions/72848440/how-to-find-the-relative-difference-between-two-quaternions
-        // https://www.codestudy.net/blog/difference-between-two-quaternions/
-        // a quaternion stores cos(angle/2) in W
-        // BoneA considered root
-        /// <param name="TargetAngle">target in radian</param>
-        public void TorqueToTargetAngle(float TargetAngle)
+        public float AngularVelocityRad()
         {
-            float error = TargetAngle - HindgeJointConstraint.HingeAngle.Angle.Radian;
-
-            //Console.WriteLine(error);
-            if (Math.Abs(error) < 1e-7)
-            {
-                return;
-            }
-
-            // PD torque  = stiffness * angle - damping * relativeAngVel
-            float correction = ((float)error * stiffness);
-
-            RigidJoint();
-            HindgeJointConstraint.Motor.TargetVelocity = correction;
-
-        }
+            JVector relativeAngularVelocity = BoneB.RB.AngularVelocity - BoneA.RB.AngularVelocity;
+            JVector axisWorld = JVector.Transform(jointAxis, BoneA.RB.Orientation);
+            float angularVelocityAlongAxis = JVector.Dot(relativeAngularVelocity, axisWorld);
+            return angularVelocityAlongAxis;
+        }   
 
         // allow free rotation alogn hindge
         public void FreeJoint()
@@ -154,6 +160,8 @@ namespace _3D_Engine.Classes.Ragdoll
                 HingeAxisVisual.setPosition(position);
                 HingeAxisVisual.Draw();
             }
+
+
             //Console.WriteLine($"Bone {name} Rotation: ({rot.X}, {rot.Y}, {rot.Z}, {rot.W})");
             //Console.WriteLine($"Visual {name} Rotation: ({Visual.GetOrientation().X}, {Visual.GetOrientation().Y}, {Visual.GetOrientation().Z}, {Visual.GetOrientation().W})");
         }

@@ -128,11 +128,14 @@ namespace _3D_Engine.Classes.Data
 
                     Bone BoneA = bones.Find(b => b.BoneID == BoneA_ID);
                     Bone BoneB = bones.Find(b => b.BoneID == BoneB_ID);
-
-                    //Console.WriteLine(BoneA);
+                    if (BoneA == null || BoneB == null)
+                        throw new InvalidDataException($"Joint {jointID} references missing bone ({BoneA_ID}, {BoneB_ID})");
 
                     WorldObject JointVisual = new WorldObject("jVisual", shader, jointVertex, scene, new Vector3(0.5f, 0.5f, 0.5f));
-                    Joint newJoint = new Joint(world, BoneA, BoneB, JointVisual);
+                    Joint newJoint = new Joint(world, BoneA, BoneB, JointVisual,
+                        TypeConvertHelper.ToJVec(anchorPoint),
+                        TypeConvertHelper.ToJVec(JointAxis),
+                        stiffness, angularDamping);
 
                     joints.Add(newJoint);
                 }

@@ -84,13 +84,15 @@ namespace _3D_Engine.Classes.Scenes
             if (game.KeyboardState.IsKeyDown(Keys.Q))
             {
                 //bone1.RB.Torque = JVector.UnitZ*5000;
-                joint1.TorqueToTargetAngle(MathF.PI / 2);
+                //joint1.TorqueToTargetAngle(MathF.PI / 2);
+                joint1.HindgeJointConstraint.Motor.TargetVelocity = 40;
 
             }
             if (game.KeyboardState.IsKeyDown(Keys.E))
             {
                 //bone1.RB.Torque = -JVector.UnitZ * 5000;
-                joint1.TorqueToTargetAngle(-MathF.PI / 2);
+                //joint1.TorqueToTargetAngle(-MathF.PI / 2);
+                joint1.HindgeJointConstraint.Motor.TargetVelocity = -40;
 
             }
 

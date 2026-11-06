@@ -27,6 +27,7 @@ namespace _3D_Engine.Classes.NeuralNet
         // 0 = bad, 1 = good
         public static float EvalProximityToTarget(JVector BodyPosition, JVector TargetPos)
         {
+            if (MaxDistanceFromPopulation <= 1e-6f) return 1f;
             float distance = (TargetPos - BodyPosition).Length();
             float normalizedDist = distance / MaxDistanceFromPopulation;
             return 1 - normalizedDist; // closer to target = higher fitness
@@ -36,7 +37,7 @@ namespace _3D_Engine.Classes.NeuralNet
         {
             if (EnergyUsed == 0)
                 return 0;
-            return 512/EnergyUsed; // less energy used = higher fitness
+            return 1f/(1f/EnergyUsed); // less energy used = higher fitness
         }
 
     }

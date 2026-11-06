@@ -18,6 +18,8 @@ namespace _3D_Engine.Classes.Scenes
         {
             this.world = world;
             this.ragdollBody = ragdollBody;
+
+            world.AllowDeactivation = false;
         }
 
     }

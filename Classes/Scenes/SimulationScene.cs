@@ -110,7 +110,7 @@ namespace _3D_Engine.Classes.Scenes
             //// test for savng a neural network and loading it back in, this is just a test and some will be removed later/ changes
             if (game.KeyboardState.IsKeyDown(Keys.LeftControl) && game.keyboardState.IsKeyPressed(Keys.S))
             {
-                var NN = new NeuralNetwork(new int[] { 8, 7, 8, 8 }); //{ 12, 7, 8, 8 } { 8, 7, 8, 8 }
+                var NN = new NeuralNetwork(new int[] { 10, 7, 8, 8 }); //{ 12, 7, 8, 8 } { 8, 7, 8, 8 }
 
                 PhysicsServer.AllowedWorldStep = false;
                 using (var dialog = new SaveFileDialog())
@@ -188,6 +188,7 @@ namespace _3D_Engine.Classes.Scenes
                     var inputM = scene.ragdollBody.GetBrainInputMatrix();
                     scene.ragdollBody.BrainNNFF(inputM);
                 }
+                Console.WriteLine(AllSimWorlds[0].ragdollBody.Joints[0].AngularVelocityRad());
 
             }
 
@@ -377,6 +378,8 @@ namespace _3D_Engine.Classes.Scenes
             {
                 scene.ragdollBody.EndOfGenerationTasks();
             }
+            // Objectives.EvalProximityToTarget
+            
 
             // give each network a fitness score based on the ragdoll performance
             for (int i = 0; i < AllSimWorlds.Count; i++)
@@ -415,6 +418,7 @@ namespace _3D_Engine.Classes.Scenes
             {
                 scene.ragdollBody.ResetAngularVelocities();
                 scene.ragdollBody.setPostion(JVector.Zero);
+                scene.ragdollBody.EnergyUsed = 0;
             });
         }
     }

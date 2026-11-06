@@ -48,6 +48,11 @@ namespace _3D_Engine.Classes.Ragdoll
 
         }
 
+        public JVector getAngularVelocity()
+        {
+            return this.RB.AngularVelocity;
+        }
+
         public override void UpdateVisual()
         {
             // Update the visual representation of the bone based on the rigid body's position and orientation
