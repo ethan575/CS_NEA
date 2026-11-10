@@ -7,6 +7,25 @@ using Vector3 = OpenTK.Mathematics.Vector3;
 
 namespace _3D_Engine.Classes.Ragdoll
 {
+    public struct RagdollSnapshot
+    {
+
+        public JVector COMPosition { get; set; }
+        public JVector[] BoneVelocities { get; set; }
+        public JVector BodyVelocity { get; set; }
+        public JQuaternion[] BoneRotations { get; set; }
+
+        public RagdollSnapshot(JVector comPosition, JVector bodyVelocity, JVector[] boneVelocities, JQuaternion[] boneRotations)
+        {
+
+            COMPosition = comPosition;
+            BodyVelocity = bodyVelocity;
+            BoneVelocities = boneVelocities;
+            BoneRotations = boneRotations;
+
+        }
+    }
+
     public class RagdollBody
     {
         public List<Bone> Bones { get; set; }
@@ -21,7 +40,9 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public float EnergyUsed = 0;
 
-        private float period = 1f; // period of the sine wave for the clock input
+        private float period = 1.5f; // period of the sine wave for the clock input
+
+        public RagdollSnapshot initialConfig { get; private set; }
 
         public FitnessObjective[] fitnessObjectives = new FitnessObjective[]
         {
@@ -36,6 +57,14 @@ namespace _3D_Engine.Classes.Ragdoll
         {
             this.Bones = bones ?? new List<Bone>();
             this.Joints = joints ?? new List<Joint>();
+
+            this.initialConfig = new RagdollSnapshot
+            {
+                COMPosition = JVector.Zero,
+                BodyVelocity = JVector.Zero,
+                BoneVelocities = bones.Select(b => b.RB.Velocity).ToArray(),
+                BoneRotations = bones.Select(b => b.RB.Orientation).ToArray()
+            };
         }
 
         public void SetBrain(NeuralNetwork brain)
@@ -105,7 +134,8 @@ namespace _3D_Engine.Classes.Ragdoll
             {
                 Joint joint = Joints[i];
                 inputMatrix[2*i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI);
-                inputMatrix[2 * i + 1, 0] = joint.AngularVelocityRad() / MathF.PI;
+                
+                inputMatrix[2 * i + 1, 0] = joint.AngularVelocityRad()/ 2; // max observed is 5
                 //inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
 
 
@@ -115,9 +145,9 @@ namespace _3D_Engine.Classes.Ragdoll
             // max velocity = 100
 
             // body velocity
-            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X /20;
-            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 20;
-            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 20;
+            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X /12;
+            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 12;
+            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 12;
 
             //target dir
             JVector DirToTarget = (TargetPosition - this.ComputeCentreOfMass());
@@ -133,8 +163,8 @@ namespace _3D_Engine.Classes.Ragdoll
 
             //LastWrittenIdx = LastWrittenIdx + 6;
 
-            Console.WriteLine("Input Matrix: ");
-            Console.WriteLine(inputMatrix.ToString());
+            //Console.WriteLine("Input Matrix: ");
+            //Console.WriteLine(inputMatrix.ToString());
 
             return inputMatrix;
         }
@@ -166,8 +196,12 @@ namespace _3D_Engine.Classes.Ragdoll
                 var t = Math.Clamp(o * 1200, -1200, 1200);
 
                 Joints[i].HindgeJointConstraint.Motor.TargetVelocity = t;//*10000;
+                ///!!!!!!!!!!! this doent work> naybe? beacuse energy end up being huge as it is called for every frame, need to integrate over time?
                 EnergyUsed += Math.Abs(t / 128);
+
+                //Console.WriteLine("t: " + t);
                 //Console.WriteLine("t: " + output[i, 0] * 1200);
+                //Console.WriteLine(t);
                 //Console.WriteLine(Joints[i].HindgeJointConstraint.Motor.TargetVelocity);
             }
 
@@ -257,6 +291,7 @@ namespace _3D_Engine.Classes.Ragdoll
             List<Joint> clonedJoints = Joints.Select(j => j.Clone(world, byId[j.BoneA.BoneID], byId[j.BoneB.BoneID])).ToList(); //existong bones
 
             RagdollBody clonedRagdoll = new RagdollBody(clonedBones, clonedJoints);
+            clonedRagdoll.initialConfig = this.initialConfig; 
             clonedRagdoll.SetBrain(this.Brain.Copy());
             return clonedRagdoll;
         }

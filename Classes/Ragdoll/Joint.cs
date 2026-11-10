@@ -111,7 +111,8 @@ namespace _3D_Engine.Classes.Ragdoll
                 HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
                 HindgeJointConstraint.Motor.MaximumForce = 200f;
             }
-            localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
+            if (HindgeJointConstraint != null)
+                localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
         }
 
         public void SetJointAnchor(Vector3 anchor)
@@ -208,6 +209,7 @@ namespace _3D_Engine.Classes.Ragdoll
             clone.HindgeJointConstraint = new HingeJoint(world, newBoneA.RB, newBoneB.RB, anchorPoint, jointAxis, true);
             clone.HindgeJointConstraint.Motor.MaximumForce = 400f;
             clone.HindgeJointConstraint.Motor.IsEnabled = true;
+            clone.localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
             return clone;
         }
 

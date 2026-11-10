@@ -26,3 +26,10 @@ In simulationScene -> createScene()
 
 
 	#Actually evolve gens now
+
+
+remove the spacebar instead just run BrainFF when key press, pasuse and save best - done
+adaptive Probability of mutation based on rate of improvement of best
+make target position to that of the rigidbody cube - done?
+save best NN when ctrl s - done
+!!!!start training!!!

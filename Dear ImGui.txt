@@ -1,0 +1,71 @@
+use the .net wrapper
+
+
+
+public class Game : GameWindow
+{
+    ImGuiController _imgui;
+
+    protected override void OnLoad()
+    {
+        base.OnLoad();
+        // ... your existing setup ...
+        _imgui = new ImGuiController(ClientSize.X, ClientSize.Y);
+    }
+
+    protected override void OnResize(ResizeEventArgs e)
+    {
+        base.OnResize(e);
+        GL.Viewport(0, 0, ClientSize.X, ClientSize.Y);
+        _imgui?.WindowResized(ClientSize.X, ClientSize.Y);
+    }
+
+    protected override void OnTextInput(TextInputEventArgs e)
+    {
+        base.OnTextInput(e);
+        _imgui.PressChar((char)e.Unicode);      // needed for text boxes
+    }
+
+    protected override void OnMouseWheel(MouseWheelEventArgs e)
+    {
+        base.OnMouseWheel(e);
+        _imgui.MouseScroll(e.Offset);
+    }
+
+    protected override void OnRenderFrame(FrameEventArgs args)
+    {
+        base.OnRenderFrame(args);
+
+        // 1. your normal 3D rendering, exactly as it is now
+        SceneManager.CurrentScene.OnFrameRender(...);
+
+        // 2. UI, always last
+        _imgui.Update(this, (float)args.Time);   // feeds mouse/keyboard/dt into ImGui
+
+        ImGui.Begin("Creature Editor");
+        if (ImGui.Button("Save")) { /* ... */ }
+        ImGui.SliderFloat("Stiffness", ref stiffness, 0f, 200f);
+        ImGui.Text($"Generation: {generation}");
+        ImGui.End();
+
+        _imgui.Render();                         // draws it over the 3D frame
+
+        SwapBuffers();
+    }
+}
+
+
+////Input click-through. If you click a button, ImGui handles it, but your camera orbit and bone picking will also see the click. Gate your own input on ImGui’s flags:
+
+
+var io = ImGui.GetIO();
+if (!io.WantCaptureMouse)    { /* handle camera / picking / dragging */ }
+if (!io.WantCaptureKeyboard) { /* handle Q/E/A/M/Delete hotkeys */ }
+
+
+
+Update and render order. _imgui.Update(...) has to run before any ImGui.* calls in a frame, and _imgui.Render() has to run after them. Both go in the same frame, usually in OnRenderFrame.
+
+Fonts. The default font works with no setup. You only need to load a .ttf if you want a custom one.
+
+Get the empty-window version working first: just ImGui.ShowDemoWindow(); between Update and Render. If the demo window appears and responds to the mouse, the whole pipeline works. After that, adding your own panels is only ImGui.* calls.

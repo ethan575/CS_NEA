@@ -95,7 +95,7 @@ namespace _3D_Engine.Classes.NeuralNet
                 for (int LayerWeightIdx = 0; LayerWeightIdx < EliteNNs[0].NetworkWeights.Count; LayerWeightIdx++) // what layer matrix are we accessing
                 {
                     Matrix<float> CurrentChangingMatrix = NewNNs[networkIdx].NetworkWeights[LayerWeightIdx];
-                    Console.WriteLine(CurrentChangingMatrix);
+                    //Console.WriteLine(CurrentChangingMatrix);
 
                     for (int row = 0; row < CurrentChangingMatrix.RowCount; row++)
                     {
@@ -107,14 +107,14 @@ namespace _3D_Engine.Classes.NeuralNet
 
                         }
                     }
-                    Console.WriteLine(CurrentChangingMatrix);
+                    //Console.WriteLine(CurrentChangingMatrix);
                 }
 
                 // biases crossover
                 for (int LayerBiasIdx = 0; LayerBiasIdx < EliteNNs[0].NetworkLayers.Count; LayerBiasIdx++) // what layer matrix are we accessing
                 {
                     Matrix<float> CurrentChangingMatrix = NewNNs[networkIdx].NetworkLayers[LayerBiasIdx].LayerBias;
-                    Console.WriteLine(CurrentChangingMatrix);
+                    //Console.WriteLine(CurrentChangingMatrix);
 
                     for (int row = 0; row < CurrentChangingMatrix.RowCount; row++)
                     {
@@ -126,7 +126,7 @@ namespace _3D_Engine.Classes.NeuralNet
 
                         }
                     }
-                    Console.WriteLine(CurrentChangingMatrix);
+                    //Console.WriteLine(CurrentChangingMatrix);
                 }
 
                 // mutationRate is the chance the network mutates

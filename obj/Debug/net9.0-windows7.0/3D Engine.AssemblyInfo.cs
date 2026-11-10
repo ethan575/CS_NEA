@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("3D Engine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f6a75c57b2fe66a1b9ff376de09a5901688947c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e39eda8822dbe0ec97b7a071f191ab8edcd4271")]
 [assembly: System.Reflection.AssemblyProductAttribute("3D Engine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("3D Engine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

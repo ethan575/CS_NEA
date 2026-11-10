@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ZXpHAYCMwI=",
+  "dgSpecHash": "nACqvZf2HS8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.6 evolve\\3D Engine.csproj",
+  "projectFilePath": "C:\\Users\\nicie\\OneDrive\\Desktop\\Ethan\\C# projects\\NEA\\3D engine v1.6.1 evolve\\3D Engine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicie\\.nuget\\packages\\jitter2\\2.8.8\\jitter2.2.8.8.nupkg.sha512",
     "C:\\Users\\nicie\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
