@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Classes/Ragdoll/Bone.cs" Link="Bone.cs" />
+    <Compile Include="../../Classes/Ragdoll/Joint.cs" Link="Joint.cs" />
+    <Compile Include="../../Classes/Ragdoll/RagdollBody.cs" Link="RagdollBody.cs" />
+    <Compile Include="../../Classes/Ragdoll/RagdollObjects.cs" Link="RagdollObjects.cs" />
+    <Compile Include="../../Classes/NeuralNet/*.cs" Link="NeuralNet/%(Filename)%(Extension)" />
+    <Compile Include="../../Classes/Helper/TypeConvertHelper.cs" Link="TypeConvertHelper.cs" />
+    <Compile Include="../../Classes/ModelImporter.cs" Link="ModelImporter.cs" />
+    <Content Include="../../models/Raw/bone.stl" Link="models/Raw/bone.stl" CopyToOutputDirectory="PreserveNewest" />
+    <PackageReference Include="Jitter2" Version="2.8.8" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="OpenTK.Mathematics" Version="4.9.4" />
+  </ItemGroup>
+</Project>
