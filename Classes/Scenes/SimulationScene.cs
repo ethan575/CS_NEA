@@ -3,10 +3,12 @@ using _3D_Engine.Classes.NeuralNet;
 using _3D_Engine.Classes.Objects;
 using _3D_Engine.Classes.physics;
 using _3D_Engine.Classes.Ragdoll;
+using _3D_Engine.Classes.UI;
 using Jitter2;
 using Jitter2.Collision.Shapes;
 using Jitter2.Dynamics;
 using Jitter2.LinearMath;
+using System.Security.Cryptography;
 using Keys = OpenTK.Windowing.GraphicsLibraryFramework.Keys;
 using Vector3 = OpenTK.Mathematics.Vector3;
 
@@ -42,12 +44,12 @@ namespace _3D_Engine.Classes.Scenes
         // simulation stuff
         bool isSimulationRunning = false;
         int GenNumber = 0;
-        int populationSize = 20;
+        int populationSize = 50;
         RagdollBody LastLoadedCreature;
         private bool backgroundPopulationHidden = false;
         Generation currentGeneration = new Generation();
         string logFileName;
-
+        private Random rng = new Random();
 
         public SimulationScene(Game game) : base(game)
         {
@@ -85,6 +87,11 @@ namespace _3D_Engine.Classes.Scenes
                     scene.ragdollBody.TargetPosition = new JVector(TargetCube.GetPosition().X, TargetCube.GetPosition().Y, TargetCube.GetPosition().Z);
                     var inputM = scene.ragdollBody.GetBrainInputMatrix();
                     scene.ragdollBody.BrainNNFF(inputM);
+                    //if (i < 2)
+                    //{
+                    //    foreach (var j in scene.ragdollBody.Joints)
+                    //        Console.WriteLine($"{i}: {j.HindgeJointConstraint.Motor.TargetVelocity}");
+                    //}
                 }
 
             }
@@ -260,8 +267,9 @@ namespace _3D_Engine.Classes.Scenes
                 {
                     isFirstSimulationClick = false;
                     PhysicsServer.AllowedWorldStep = true;
+                    currentGeneration.Population = new List<NeuralNetwork>();
+                    currentGeneration.Population.Add(ForegroundBody.Brain);
 
-                    
 
                     //AllSimWorlds.Add(new HeadlessSimulationScene(ForegroundWorld, body));
 
@@ -311,7 +319,7 @@ namespace _3D_Engine.Classes.Scenes
                     foreach (Bone bone in scene.ragdollBody.Bones)
                     {
                         bone.Visual.visible = backgroundPopulationHidden;
-                        Console.WriteLine($"Bone {bone.name} visibility: {bone.Visual.visible}");
+                        //Console.WriteLine($"Bone {bone.name} visibility: {bone.Visual.visible}");
                     }
                 }
                 backgroundPopulationHidden = !backgroundPopulationHidden;
@@ -383,13 +391,16 @@ namespace _3D_Engine.Classes.Scenes
 
 
             RigidBody floorRB = ForegroundWorld.CreateRigidBody();
-            floorRB.AddShape(new BoxShape(new JVector(40, 1f, 40)));
+            
+            floorRB.AddShape(new BoxShape(new JVector(120, 1f, 120)));
             floorRB.MotionType = MotionType.Static;
             floor = new PhysicsObject("floor", shader, floorVertex, this, game, floorRB, new Vector3(1, 1, 1));
-            floor.Scale(2, 0.5f, 2);
+            floor.Scale(6, 0.5f, 6); 
+            // so scale factor = (20, 2, 20)
             floor.setPosition(new Vector3(0, -10, 0));
 
             RigidBody RB1 = ForegroundWorld.CreateRigidBody();
+            RB1.SetMassInertia(20);
             RB1.AddShape(new BoxShape(1));
             RB1.MotionType = MotionType.Dynamic;
             TargetCube = new PhysicsObject("convex1", shader, cubeVertex, this, game, RB1, color);
@@ -398,10 +409,11 @@ namespace _3D_Engine.Classes.Scenes
             TargetCube.Scale(0.5f);
             TargetCube.setPosition(5f, 3f, 12f);
 
-
+            
 
             IsReady = true;
             PhysicsServer.AllowedWorldStep = false;
+            UiManager.UiMode = UiTypes.Simulation;
         }
 
         public override void destroyScene()
@@ -447,6 +459,9 @@ namespace _3D_Engine.Classes.Scenes
             }
             // best fitness score first so the fittest neural networks are at the top 
             currentGeneration.Population = currentGeneration.Population.OrderByDescending(nn => nn.FitnessScore).ToList();
+            UiManager.UiTexts["BestFitness"] = $"{currentGeneration.Population[0].FitnessScore}";
+            UiManager.UiTexts["Generation Time left"] = Convert.ToString(currentGeneration.ActiveTimeLeft);
+            UiManager.FitnessGraphValues.Add(currentGeneration.Population[0].FitnessScore);
             NNTrainer.Generations.Add(currentGeneration.Copy());
 
             //string log = $"Best Fitness: {currentGeneration.Population[0].FitnessScore} \n\n " +
@@ -480,10 +495,12 @@ namespace _3D_Engine.Classes.Scenes
         public void StartNextGeneration()
         {
             GenNumber++;
+             UiManager.UiTexts["Generation"] = $"{GenNumber}";
             // reset
             AllSimWorlds.ForEach(scene =>
             {
                 scene.ragdollBody.ResetAngularVelocities();
+                //scene.ragdollBody.reset();
                 scene.ragdollBody.setPostion(scene.ragdollBody.initialConfig.COMPosition);
                 for (int i = 0; i < scene.ragdollBody.Bones.Count; i++)
                 {
@@ -492,6 +509,13 @@ namespace _3D_Engine.Classes.Scenes
                 }
                 scene.ragdollBody.EnergyUsed = 0;
             });
+
+
+            float numX = (float)((rng.NextSingle() * 2) - 1.0); // between 0 and -1
+            float numY = (float)((rng.NextSingle() * 2) - 1.0); // between 0 and -1
+            numX = numX * 50;
+            numY = numY * 50;
+            TargetCube.setPosition(numX, 0, numY);
         }
     }
 }

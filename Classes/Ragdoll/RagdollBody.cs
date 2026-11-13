@@ -307,5 +307,13 @@ namespace _3D_Engine.Classes.Ragdoll
             }
         }
 
+        public void reset()
+        {
+            for (int i=0; i<this.Bones.Count; i++)
+            {
+                this.Bones[i].RB.Orientation = this.initialConfig.BoneRotations[i];
+            }
+        }
+
     }
 }

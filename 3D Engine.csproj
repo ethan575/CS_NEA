@@ -2,13 +2,14 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net9.0-windows7.0</TargetFramework>
+		<TargetFramework>net10.0-windows7.0</TargetFramework>
 		<RootNamespace>_3D_Engine</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
 		<!-- Add this line -->
 		<UseWindowsForms>true</UseWindowsForms>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -61,6 +62,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="ImGui.NET" Version="1.91.6.1" />
 		<PackageReference Include="Jitter2" Version="2.8.8" />
 		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
 		<PackageReference Include="OpenTK" Version="4.9.4" />

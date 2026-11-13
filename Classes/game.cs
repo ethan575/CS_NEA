@@ -1,12 +1,17 @@
 ﻿using _3D_Engine;
 using _3D_Engine.Classes;
 using _3D_Engine.Classes.CameraPresets;
+using _3D_Engine.Classes.NeuralNet;
 using _3D_Engine.Classes.Scenes;
+using _3D_Engine.Classes.UI;
+using ImGuiNET;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
+using System;
+using System.Numerics;
 using Vector3 = OpenTK.Mathematics.Vector3;
 
 public class Game : GameWindow
@@ -22,6 +27,9 @@ public class Game : GameWindow
 
     public KeyboardState keyboardState;
     public MouseState mouseState;
+    
+
+    
 
     public Game(int width, int height, string title)
         : base(GameWindowSettings.Default, new NativeWindowSettings()
@@ -66,8 +74,9 @@ public class Game : GameWindow
         shader.SetMatrix4("projection", projection);
         shader.SetMatrix4("view", view);
 
-
-
+        // gui
+        UiManager.guiController = new ImGuiController(Size.X, Size.Y);
+        UiManager.OnLoad();
     }
 
     protected override void OnUnload()
@@ -101,6 +110,12 @@ public class Game : GameWindow
 
         cam.OnFrameRender(shader);
 
+        //UI always last
+        UiManager.guiController.Update(this, (float)args.Time);   // feeds mouse/keyboard/dt into ImGui
+
+        UiManager.Update();
+        
+        UiManager.guiController.Render();                         // draws over the 3D frame
 
         //Console.WriteLine("transform = " + GL.GetUniformLocation(shader.Handle, "transform"));
         SwapBuffers();
@@ -131,6 +146,7 @@ public class Game : GameWindow
         base.OnFramebufferResize(e);
 
         GL.Viewport(0, 0, e.Width, e.Height);
+        UiManager.guiController.WindowResized(e.Width, e.Height);
 
         //projection = Matrix4.CreateOrthographicOffCenter(0f, e.Width, 0f, e.Height, -1f, 1f);
         projection = cam.GetProjectionMatrix(e.Width, e.Height);
@@ -139,4 +155,17 @@ public class Game : GameWindow
         shader.SetMatrix4("projection", projection);
         shader.SetMatrix4("view", view);
     }
+
+    protected override void OnTextInput(TextInputEventArgs e)
+    {
+        base.OnTextInput(e);
+        UiManager.guiController.PressChar((char)e.Unicode);
+    }
+
+    protected override void OnMouseWheel(MouseWheelEventArgs e)
+    {
+        base.OnMouseWheel(e);
+        UiManager.guiController.MouseScroll(e.Offset);
+    }
+
 }

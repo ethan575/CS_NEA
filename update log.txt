@@ -33,3 +33,10 @@ adaptive Probability of mutation based on rate of improvement of best
 make target position to that of the rigidbody cube - done?
 save best NN when ctrl s - done
 !!!!start training!!!
+
+
+
+!!Calmp joint angles to avoid full rotation - done
+!! make floor bigger - done
+!! randomize target for each gen 
+!!Reward the reduction in distance to the target over the episode (start distance minus end distance)

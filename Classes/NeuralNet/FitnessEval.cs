@@ -29,8 +29,9 @@ namespace _3D_Engine.Classes.NeuralNet
         {
             if (MaxDistanceFromPopulation <= 1e-6f) return 1f;
             float distance = (TargetPos - BodyPosition).Length();
-            float normalizedDist = distance / MaxDistanceFromPopulation;
-            return 1 - normalizedDist; // closer to target = higher fitness
+            //float normalizedDist = distance / MaxDistanceFromPopulation;
+            //return 1 - normalizedDist; // closer to target = higher fitness
+            return 20 / distance;
         }
 
         public static float EvalEnergyUsed(float EnergyUsed)
