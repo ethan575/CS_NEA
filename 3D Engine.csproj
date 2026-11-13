@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0-windows7.0</TargetFramework>
+		<RootNamespace>_3D_Engine</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Add this line -->
+		<UseWindowsForms>true</UseWindowsForms>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Classes\Builder\**" />
+		<Compile Remove="tests\**\*.cs" />
+		<EmbeddedResource Remove="Classes\Builder\**" />
+		<None Remove="Classes\Builder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="models\Raw\bone.obj" />
+		<None Remove="models\Raw\bone.stl" />
+		<None Remove="models\Raw\cube.stl" />
+		<None Remove="models\Raw\floor.stl" />
+		<None Remove="models\Raw\joint.stl" />
+		<None Remove="models\Raw\monkey.stl" />
+		<None Remove="Shaders\shader.frag" />
+		<None Remove="Shaders\shader.vert" />
+		<None Remove="Shaders\TextureDisplay\shader.frag" />
+		<None Remove="Shaders\TextureDisplay\shader.vert" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="models\Raw\bone.stl">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="models\Raw\cube.stl">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="models\Raw\floor.stl">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="models\Raw\HingeAxisDisplay.stl">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="models\Raw\monkey.stl">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Shaders\shader.frag">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Shaders\shader.vert">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Shaders\TextureDisplay\shader.frag">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Shaders\TextureDisplay\shader.vert">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ImGui.NET" Version="1.91.6.1" />
+		<PackageReference Include="Jitter2" Version="2.8.8" />
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+		<PackageReference Include="OpenTK" Version="4.9.4" />
+		<PackageReference Include="StbImageSharp" Version="2.30.15" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="models\Raw\joint.stl">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
