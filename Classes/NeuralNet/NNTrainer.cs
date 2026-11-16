@@ -1,5 +1,4 @@
-﻿using MathNet.Numerics.LinearAlgebra;
-using System.Diagnostics;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace _3D_Engine.Classes.NeuralNet
 {
@@ -7,11 +6,11 @@ namespace _3D_Engine.Classes.NeuralNet
     public class Generation
     {
         public float ActiveTimeLeft = 20f;
-        public List<NeuralNetwork> Population;
+        public List<NeuralNetwork> Population = new List<NeuralNetwork>();
 
         public Generation()
         {
-            
+
         }
         public Generation(List<NeuralNetwork> population)
         {
@@ -67,131 +66,177 @@ namespace _3D_Engine.Classes.NeuralNet
         private static List<NeuralNetwork> EliteNNs = new List<NeuralNetwork>();
         private static List<NeuralNetwork> NewNNs = new List<NeuralNetwork>();
 
-        private static float PNetworkMutates = 0.8f; // chance of mutation
-        private static float mutationRate = 0.2f; // chance of  element mutation
+        private const float DefaultMutationRate = 0.25f;
 
         public static Generation EvolveGeneration(List<NeuralNetwork> population, int NoEliteNNs = 5)
         {
-            Generation newGen = new Generation(population);
-
-            EliteNNs = new List<NeuralNetwork>(newGen.Population.Take(NoEliteNNs)); // keep these the same
-            NewNNs = new List<NeuralNetwork>(newGen.Population.Skip(NoEliteNNs)); // evolve
-
-            EliteNNs = EliteNNs.Select(nn => nn.Copy()).ToList();
-            NewNNs = NewNNs.Select(nn => nn.Copy()).ToList();
-
-            //!!!!!!!!!! new network is just a combination of the entire weight matrix of fittest
-            // !! make sure to mutate weight as well as bias
-
-            //crossover
-            for (int networkIdx = 0; networkIdx < NewNNs.Count - 3; networkIdx++) // 3 last networks are only mutation
+            if (population == null || population.Count == 0)
             {
-                int parent1Idx = rng.Next(0, EliteNNs.Count);
-                int parent2Idx;
-                do parent2Idx = rng.Next(0, EliteNNs.Count);
-                while (parent2Idx == parent1Idx && EliteNNs.Count > 1);
+                var emptyGen = new Generation(new List<NeuralNetwork>());
+                LatestGen = emptyGen;
+                return emptyGen;
+            }
 
-                // weights crossover
-                for (int LayerWeightIdx = 0; LayerWeightIdx < EliteNNs[0].NetworkWeights.Count; LayerWeightIdx++) // what layer matrix are we accessing
+            List<NeuralNetwork> sorted = population.OrderByDescending(nn => nn.FitnessScore).ToList();
+            int eliteCount = Math.Clamp(NoEliteNNs, 1, sorted.Count);
+            int offspringCount = sorted.Count - eliteCount;
+
+            EliteNNs = sorted.Take(eliteCount).Select(nn =>
+            {
+                var copy = nn.Copy();
+                copy.ExecuteEndOfGenerationTasks();
+                return copy;
+            }).ToList();
+
+            NewNNs = new List<NeuralNetwork>(offspringCount);
+
+            if (offspringCount > 0)
+            {
+                int poolSize = Math.Clamp(Math.Max(eliteCount, sorted.Count / 4), 1, sorted.Count);
+                int immigrantCount = offspringCount >= 10 ? 3 : 0;
+                int tunableCount = offspringCount - immigrantCount;
+                int crossoverCount = poolSize >= 2 ? Math.Min(Math.Max(0, tunableCount / 6), tunableCount) : 0;
+
+                for (int i = 0; i < offspringCount; i++)
                 {
-                    Matrix<float> CurrentChangingMatrix = NewNNs[networkIdx].NetworkWeights[LayerWeightIdx];
-                    //Console.WriteLine(CurrentChangingMatrix);
-
-                    for (int row = 0; row < CurrentChangingMatrix.RowCount; row++)
+                    if (i >= tunableCount)
                     {
-                        for (int column = 0; column < CurrentChangingMatrix.ColumnCount; column++)
+                        // Fresh random immigrants preserve global exploration
+                        var immigrant = new NeuralNetwork(sorted[0].LayerDims);
+                        immigrant.ExecuteEndOfGenerationTasks();
+                        NewNNs.Add(immigrant);
+                        continue;
+                    }
+
+                    NeuralNetwork child;
+                    if (i < crossoverCount)
+                    {
+                        int p1 = SelectTournamentIndex(poolSize, tournamentSize: 3);
+                        int p2;
+                        do
                         {
+                            p2 = SelectTournamentIndex(poolSize, tournamentSize: 3);
+                        } while (p2 == p1 && poolSize > 1);
 
-                            CurrentChangingMatrix[row, column] = rng.NextSingle() < 0.5f ? EliteNNs[parent1Idx].genome.Weights[LayerWeightIdx][row, column] : EliteNNs[parent2Idx].genome.Weights[LayerWeightIdx][row, column];
-
-
-                        }
+                        child = NeuronCrossover(sorted[p1], sorted[p2]);
+                        MutateNetwork(child, DefaultMutationRate, sigma: 0.15f);
                     }
-                    //Console.WriteLine(CurrentChangingMatrix);
-                }
-
-                // biases crossover
-                for (int LayerBiasIdx = 0; LayerBiasIdx < EliteNNs[0].NetworkLayers.Count; LayerBiasIdx++) // what layer matrix are we accessing
-                {
-                    Matrix<float> CurrentChangingMatrix = NewNNs[networkIdx].NetworkLayers[LayerBiasIdx].LayerBias;
-                    //Console.WriteLine(CurrentChangingMatrix);
-
-                    for (int row = 0; row < CurrentChangingMatrix.RowCount; row++)
+                    else
                     {
-                        for (int column = 0; column < CurrentChangingMatrix.ColumnCount; column++)
-                        {
+                        int parentIdx = SelectTournamentIndex(poolSize, tournamentSize: 3);
+                        child = sorted[parentIdx].Copy();
 
+                        int mutIdx = i - crossoverCount;
+                        int mutSpan = Math.Max(1, tunableCount - crossoverCount);
+                        float frac = (float)mutIdx / mutSpan;
 
-                            CurrentChangingMatrix[row, column] = rng.NextSingle() < 0.5f ? EliteNNs[parent1Idx].genome.Biases[LayerBiasIdx][row, column] : EliteNNs[parent2Idx].genome.Biases[LayerBiasIdx][row, column];
-
-                        }
-                    }
-                    //Console.WriteLine(CurrentChangingMatrix);
-                }
-
-                // mutationRate is the chance the network mutates
-                if (rng.NextSingle() < PNetworkMutates)
-                {
-                    // weight mutation
-                    for (int LayerWeightIdx = 0; LayerWeightIdx < EliteNNs[0].NetworkWeights.Count; LayerWeightIdx++)
-                    {
-                        Mutate(NewNNs[networkIdx].NetworkWeights[LayerWeightIdx]);
+                        if (frac < 0.35f)
+                            MutateNetwork(child, rate: 0.20f, sigma: 0.08f);
+                        else if (frac < 0.80f)
+                            MutateNetwork(child, rate: 0.25f, sigma: 0.18f);
+                        else
+                            MutateNetwork(child, rate: 0.30f, sigma: 0.35f);
                     }
 
-                    // bias mutation
-                    for (int LayerBiasIdx = 0; LayerBiasIdx < EliteNNs[0].NetworkLayers.Count; LayerBiasIdx++)
-                    {
-                        Mutate(NewNNs[networkIdx].NetworkLayers[LayerBiasIdx].LayerBias);
-                    }
-                }
-
-
-
-            }
-
-            for (int i = NewNNs.Count - 3; i < NewNNs.Count; i++)
-            {
-                NewNNs[i] = EliteNNs[rng.Next(EliteNNs.Count)].Copy();
-            }
-            for (int networkIdx = Math.Max(0, NewNNs.Count - 3); networkIdx < NewNNs.Count; networkIdx++) // 3 last networks are only mutation
-            {
-                // weight mutation
-                for (int LayerWeightIdx = 0; LayerWeightIdx < EliteNNs[0].NetworkWeights.Count; LayerWeightIdx++)
-                {
-                    Mutate(NewNNs[networkIdx].NetworkWeights[LayerWeightIdx]);
-                }
-
-                // bias mutation
-                for (int LayerBiasIdx = 0; LayerBiasIdx < EliteNNs[0].NetworkLayers.Count; LayerBiasIdx++)
-                {
-                    Mutate(NewNNs[networkIdx].NetworkLayers[LayerBiasIdx].LayerBias);
+                    child.ExecuteEndOfGenerationTasks();
+                    NewNNs.Add(child);
                 }
             }
 
-            newGen.Population = new List<NeuralNetwork>(EliteNNs);
-            newGen.Population.AddRange(NewNNs);
+            List<NeuralNetwork> nextPopulation = new List<NeuralNetwork>(sorted.Count);
+            nextPopulation.AddRange(EliteNNs);
+            nextPopulation.AddRange(NewNNs);
 
-            population.ForEach(nn=> nn.FitnessScore = 0); // reset fitness score for next generation
+            Generation newGen = new Generation(nextPopulation);
+            population.ForEach(nn => nn.FitnessScore = 0); // reset old fitness scores
 
-            //Generations.Add(newGen);
             LatestGen = newGen;
             return newGen;
         }
 
-        private static void Mutate(Matrix<float> matrix)
+        public static NeuralNetwork CreateMutatedVariant(NeuralNetwork parent, float rate = DefaultMutationRate, float sigma = 0.18f)
         {
+            NeuralNetwork variant = parent.Copy();
+            MutateNetwork(variant, rate, sigma);
+            variant.ExecuteEndOfGenerationTasks();
+            return variant;
+        }
 
+        // Select an index in [0, poolSize) biased toward earlier (fitter) entries in sorted list
+        private static int SelectTournamentIndex(int poolSize, int tournamentSize)
+        {
+            int best = rng.Next(poolSize);
+            for (int t = 1; t < tournamentSize; t++)
+            {
+                int candidate = rng.Next(poolSize);
+                if (candidate < best)
+                    best = candidate;
+            }
+            return best;
+        }
+
+        // Crosses entire neuron rows (incoming weights + that neuron's bias) together so hidden units stay coherent
+        private static NeuralNetwork NeuronCrossover(NeuralNetwork parent1, NeuralNetwork parent2)
+        {
+            NeuralNetwork child = parent1.Copy();
+
+            for (int layerWeightIdx = 0; layerWeightIdx < child.NetworkWeights.Count; layerWeightIdx++)
+            {
+                Matrix<float> childWeights = child.NetworkWeights[layerWeightIdx];
+                Matrix<float> p1Weights = parent1.NetworkWeights[layerWeightIdx];
+                Matrix<float> p2Weights = parent2.NetworkWeights[layerWeightIdx];
+
+                int targetLayerIdx = layerWeightIdx + 1;
+                bool hasTargetBias = targetLayerIdx < child.NetworkLayers.Count;
+
+                for (int row = 0; row < childWeights.RowCount; row++)
+                {
+                    bool pickFirst = rng.NextSingle() < 0.5f;
+                    Matrix<float> srcWeights = pickFirst ? p1Weights : p2Weights;
+
+                    for (int col = 0; col < childWeights.ColumnCount; col++)
+                    {
+                        childWeights[row, col] = srcWeights[row, col];
+                    }
+
+                    if (hasTargetBias && row < child.NetworkLayers[targetLayerIdx].LayerBias.RowCount)
+                    {
+                        Matrix<float> srcBias = pickFirst
+                            ? parent1.NetworkLayers[targetLayerIdx].LayerBias
+                            : parent2.NetworkLayers[targetLayerIdx].LayerBias;
+                        child.NetworkLayers[targetLayerIdx].LayerBias[row, 0] = srcBias[row, 0];
+                    }
+                }
+            }
+
+            return child;
+        }
+
+        private static void MutateNetwork(NeuralNetwork network, float rate, float sigma)
+        {
+            for (int layerWeightIdx = 0; layerWeightIdx < network.NetworkWeights.Count; layerWeightIdx++)
+            {
+                Mutate(network.NetworkWeights[layerWeightIdx], rate, sigma);
+            }
+
+            // Skip layer 0 (InputLayer bias is unused)
+            for (int layerBiasIdx = 1; layerBiasIdx < network.NetworkLayers.Count; layerBiasIdx++)
+            {
+                Mutate(network.NetworkLayers[layerBiasIdx].LayerBias, rate, sigma);
+            }
+        }
+
+        private static void Mutate(Matrix<float> matrix, float rate, float sigma)
+        {
             for (int row = 0; row < matrix.RowCount; row++)
             {
                 for (int column = 0; column < matrix.ColumnCount; column++)
                 {
-                    if (rng.NextSingle() < mutationRate)
-                        matrix[row, column] += (float)gaussian(0, 0.2); // add a small random value from a normal distribution
+                    if (rng.NextSingle() < rate)
+                        matrix[row, column] += (float)gaussian(0.0, sigma);
                 }
             }
         }
-
-        private static System.Random r = new System.Random();
 
         // https://github.com/conradshyu/rng/blob/master/random.cs
         static double gaussian(double mean = 0.0, double s = 1.0)
@@ -201,12 +246,12 @@ namespace _3D_Engine.Classes.NeuralNet
             double u2 = uniform();
 
             return s * Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Cos(2.0 * Math.PI * u2) + mean;
-        }   // normal distribution with mean 0 stadnard deviation 1
+        }
 
         static double uniform(double a = 0.0, double b = 1.0)
         {
-            return (a + (b - a) * r.NextDouble());
-        }   // uniform distribution, default [0, 1]
+            return a + (b - a) * rng.NextDouble();
+        }
 
     }
 }
