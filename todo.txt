@@ -1,0 +1,25 @@
+﻿// get list of "random" location of target cube so it starts far from creatures
+// check creature reached radius
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public FitnessObjective[] fitnessObjectives =
+{
+    new FitnessObjective(
+        1f,
+        ragdoll => Objectives.EvalTargetProgress(
+            ragdoll.initialConfig.COMPosition,
+            ragdoll.ComputeCentreOfMass(),
+            ragdoll.TargetPosition))
+};

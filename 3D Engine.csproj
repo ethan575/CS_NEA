@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net10.0-windows7.0</TargetFramework>
+		<TargetFramework>net9.0-windows7.0</TargetFramework>
 		<RootNamespace>_3D_Engine</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -14,7 +14,6 @@
 
 	<ItemGroup>
 		<Compile Remove="Classes\Builder\**" />
-		<Compile Remove="tests\**\*.cs" />
 		<EmbeddedResource Remove="Classes\Builder\**" />
 		<None Remove="Classes\Builder\**" />
 	</ItemGroup>
@@ -30,6 +29,7 @@
 		<None Remove="Shaders\shader.vert" />
 		<None Remove="Shaders\TextureDisplay\shader.frag" />
 		<None Remove="Shaders\TextureDisplay\shader.vert" />
+		<None Remove="todo.txt" />
 	</ItemGroup>
 
 	<ItemGroup>

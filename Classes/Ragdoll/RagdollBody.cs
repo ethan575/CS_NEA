@@ -1,8 +1,8 @@
 ﻿using _3D_Engine.Classes.NeuralNet;
+using _3D_Engine.Classes.physics;
 using Jitter2;
 using Jitter2.LinearMath;
 using MathNet.Numerics.LinearAlgebra;
-using System.Numerics;
 using Vector3 = OpenTK.Mathematics.Vector3;
 
 namespace _3D_Engine.Classes.Ragdoll
@@ -35,7 +35,7 @@ namespace _3D_Engine.Classes.Ragdoll
         public List<Bone> Bones { get; set; }
         public List<Joint> Joints { get; set; }
 
-        public NeuralNetwork Brain { get; private set; } 
+        public NeuralNetwork Brain { get; private set; }
 
         public JVector BodyVelocity { get; private set; }
 
@@ -43,6 +43,11 @@ namespace _3D_Engine.Classes.Ragdoll
         public JVector COMPosition { get; private set; } = JVector.Zero;
 
         public float EnergyUsed = 0;
+        public float TimeToReachTarget = 0;
+        public bool reached = false;
+
+        public JVector initialPos;
+
 
         private float period = 1.5f; // period of the sine wave for the clock input
 
@@ -51,8 +56,10 @@ namespace _3D_Engine.Classes.Ragdoll
         public FitnessObjective[] fitnessObjectives = new FitnessObjective[]
         {
             // ragdoll is the parameter in lambda function
-            new FitnessObjective(1f, ragdoll => Objectives.EvalProximityToTarget(ragdoll.COMPosition, ragdoll.TargetPosition)),
-            new FitnessObjective(0.5f, ragdoll => Objectives.EvalEnergyUsed(ragdoll.EnergyUsed))
+            // disreguard energy usage at first
+            new FitnessObjective(20f, ragdoll => Objectives.EvalProgressToTarget(ragdoll.initialPos, ragdoll.COMPosition, ragdoll.TargetPosition)),
+            new FitnessObjective(0f, ragdoll => Objectives.EvalEnergyUsed(ragdoll.EnergyUsed)),
+            new FitnessObjective(5f, ragdoll => Objectives.EvalTimeTaken(ragdoll.TimeToReachTarget, ragdoll.reached))
         };
 
         private float clock = 0f;
@@ -90,7 +97,7 @@ namespace _3D_Engine.Classes.Ragdoll
         ]
          */
 
-            if (brain.LayerDims[0] != (this.Joints.Count * 2) + 8 )
+            if (brain.LayerDims[0] != (this.Joints.Count * 2) + 8)
             {
                 throw new ArgumentException("Input layer size must equal twice the joint count plus eight.");
             }
@@ -120,7 +127,7 @@ namespace _3D_Engine.Classes.Ragdoll
             JVector total = JVector.Zero;
             float totalMass = 0;
 
-            foreach(Bone b in this.Bones)
+            foreach (Bone b in this.Bones)
             {
                 total += b.RB.Mass * b.RB.Velocity;
                 totalMass += b.RB.Mass;
@@ -129,7 +136,7 @@ namespace _3D_Engine.Classes.Ragdoll
             return totalMass > 0 ? total * (1 / totalMass) : JVector.Zero;
         }
 
-        
+
 
         public Matrix<float> GetBrainInputMatrix()
         {
@@ -143,9 +150,9 @@ namespace _3D_Engine.Classes.Ragdoll
             for (int i = 0; i < Joints.Count; i++) // each joint has 2 inputs
             {
                 Joint joint = Joints[i];
-                inputMatrix[2*i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI);
-                
-                inputMatrix[2 * i + 1, 0] = joint.AngularVelocityRad()/ 2; // max observed is 5
+                inputMatrix[2 * i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI);
+
+                inputMatrix[2 * i + 1, 0] = joint.AngularVelocityRad() / 2; // max observed is 5
                 //inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
 
 
@@ -155,7 +162,7 @@ namespace _3D_Engine.Classes.Ragdoll
             // max velocity = 100
 
             // body velocity
-            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X /12;
+            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X / 12;
             inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 12;
             inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 12;
 
@@ -181,11 +188,28 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void BrainNNFF(Matrix<float> input)
         {
+
+            //deactivate if close to target, to avoid overshooting and oscillation
+            if (!reached && (this.TargetPosition - this.ComputeCentreOfMass()).Length() < 15f)
+            {
+                ResetAngularVelocities();
+
+                TimeToReachTarget = new Generation().ActiveTimeLeft - clock;
+                reached = true;
+                Console.WriteLine("Reached target in: " + TimeToReachTarget + " seconds");
+                return;
+            }
+            else if (reached)
+            {
+                //ResetAngularVelocities();
+                return;
+            }
+
             if (Brain == null)
             {
                 throw new InvalidOperationException("Brain is not set.");
             }
-            
+
             else if (input.RowCount != Brain.LayerDims[0] || input.ColumnCount != 1)
             {
                 throw new ArgumentException("Input matrix dimensions do not match the expected input layer size.");
@@ -228,12 +252,12 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void ApplyTorque(Vector3 torque, Bone bone)
         {
-            bone.RB.AddForce(new JVector(torque.X, torque.Y, torque.Z) );
+            bone.RB.AddForce(new JVector(torque.X, torque.Y, torque.Z));
         }
 
         public void ApplyForce(JVector force)
         {
-            foreach (Bone b  in Bones)
+            foreach (Bone b in Bones)
             {
                 b.RB.AddForce(force);
             }
@@ -267,7 +291,7 @@ namespace _3D_Engine.Classes.Ragdoll
             }
 
             COMPosition = this.ComputeCentreOfMass();
-            this.BodyVelocity = ComputeVelocity(); 
+            this.BodyVelocity = ComputeVelocity();
 
         }
 
@@ -335,6 +359,8 @@ namespace _3D_Engine.Classes.Ragdoll
             EnergyUsed = 0f;
             COMPosition = ComputeCentreOfMass();
             BodyVelocity = ComputeVelocity();
+            TimeToReachTarget = 0f;
+            reached = false;
         }
 
     }

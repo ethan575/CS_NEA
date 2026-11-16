@@ -45,8 +45,8 @@ namespace _3D_Engine.Classes.UI
                 values_count: FitnessGraphValues.Count,
                 values_offset: 0,
                 overlay_text: "",
-                scale_min: -1.0f,
-                scale_max: 1.0f,
+                scale_min: 0.0f,
+                scale_max: 80.0f,
                 graph_size: new Vector2(0, 80) // 0 width fills available window space
                                    );
 

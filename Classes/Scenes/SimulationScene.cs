@@ -1,4 +1,5 @@
 ﻿using _3D_Engine.Classes.Data;
+using _3D_Engine.Classes.Helper;
 using _3D_Engine.Classes.NeuralNet;
 using _3D_Engine.Classes.Objects;
 using _3D_Engine.Classes.physics;
@@ -75,8 +76,10 @@ namespace _3D_Engine.Classes.Scenes
             //dt is in seconds
             if (isSimulationRunning && PhysicsServer.AllowedWorldStep)
             {
-                float simulationDt = MathF.Min(dt, 1 / 30f);
+                float simulationDt = MathF.Min(dt, 1 / 30f); // cant have larger than 1/30 of a sec
                 currentGeneration.ActiveTimeLeft -= simulationDt;
+                UiManager.UiTexts["Generation Time left"] = Convert.ToString(MathF.Truncate(currentGeneration.ActiveTimeLeft));
+
                 if (currentGeneration.ActiveTimeLeft <= 0)
                 {
                     PrepareEndGeneration();
@@ -274,6 +277,10 @@ namespace _3D_Engine.Classes.Scenes
 
 
                     //AllSimWorlds.Add(new HeadlessSimulationScene(ForegroundWorld, body));
+                    // get pos when hits floor
+                    var ray = Raycast.RaycastHit(ForegroundWorld, JVector.Zero, -JVector.UnitY, 100, out RaycastHitInfo infHit,
+                    out var normal, out var hitOffset, out var proxy);
+
 
                     for (int i = 0; i < populationSize - 1; i++) // '-1' because the first one is foreground
                     {
@@ -286,6 +293,7 @@ namespace _3D_Engine.Classes.Scenes
 
                         //!!!!!!!!!!!!!!! create a method for bnes and joints so theu can be clone to be added to new worlds - done
                         RagdollBody newBody = LastLoadedCreature.Clone(newWorld);
+                        newBody.initialPos = TypeConvertHelper.ToJVec(infHit.Point);
                         currentGeneration.Population.Add(newBody.Brain);
                         // clone NN and set it to the new body
                         //newBody.SetBrain(LastSavedNN);
@@ -325,6 +333,7 @@ namespace _3D_Engine.Classes.Scenes
                     }
                 }
                 backgroundPopulationHidden = !backgroundPopulationHidden;
+
             }
 
             float u = 0.5f;
@@ -405,11 +414,11 @@ namespace _3D_Engine.Classes.Scenes
             RB1.SetMassInertia(20);
             RB1.AddShape(new BoxShape(1));
             RB1.MotionType = MotionType.Dynamic;
-            TargetCube = new PhysicsObject("convex1", shader, cubeVertex, this, game, RB1, color);
+            TargetCube = new PhysicsObject("convex1", shader, cubeVertex, this, game, RB1, new Vector3(0, 255,0));
             TargetCube.setMass(29f);
             TargetCube.setObeyGravity(true);
             TargetCube.Scale(0.5f);
-            TargetCube.setPosition(5f, 3f, 12f);
+            TargetCube.setPosition(5f, 3f, 50f);
 
             
 
@@ -462,7 +471,7 @@ namespace _3D_Engine.Classes.Scenes
             // best fitness score first so the fittest neural networks are at the top 
             currentGeneration.Population = currentGeneration.Population.OrderByDescending(nn => nn.FitnessScore).ToList();
             UiManager.UiTexts["BestFitness"] = $"{currentGeneration.Population[0].FitnessScore}";
-            UiManager.UiTexts["Generation Time left"] = Convert.ToString(currentGeneration.ActiveTimeLeft);
+            
             UiManager.FitnessGraphValues.Add(currentGeneration.Population[0].FitnessScore);
             NNTrainer.Generations.Add(currentGeneration.Copy());
 
@@ -504,12 +513,42 @@ namespace _3D_Engine.Classes.Scenes
                 scene.ragdollBody.reset();
             });
 
+            SpawnTarget();
+            
+            
+        }
 
-            float numX = (float)((rng.NextSingle() * 2) - 1.0); // between 0 and -1
-            float numY = (float)((rng.NextSingle() * 2) - 1.0); // between 0 and -1
-            numX = numX * 50;
-            numY = numY * 50;
-            TargetCube.setPosition(numX, 0, numY);
+        private void SpawnTarget()
+        {
+            // min horizontal distance from the creature centre.
+            const float minDistance = 30f;
+            const float spawnMultiplier = 50f;
+
+            // All population members currently reset to the same starting location.
+            JVector centre = ForegroundBody.ComputeCentreOfMass();
+
+            float x;
+            float z;
+            float dirX;
+            float dirZ;
+
+            do
+            {
+                // generate between -1 and 1
+                x = (rng.NextSingle() * 2f - 1f) * spawnMultiplier;
+                z = (rng.NextSingle() * 2f - 1f) * spawnMultiplier;
+
+                dirX = x - centre.X;
+                dirZ = z - centre.Z;
+            }
+            // distance from points < min distance (pythag)
+            while (dirX * dirX + dirZ * dirZ < minDistance * minDistance);
+
+            TargetCube.setPosition(x, 0f, z);
+
+            // Dont carry movement over from the previous target position.
+            TargetCube.setVelocity(Vector3.Zero);
+            TargetCube.Rbody.AngularVelocity = JVector.Zero;
         }
     }
 }
