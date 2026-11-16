@@ -201,7 +201,7 @@ namespace _3D_Engine.Classes.Ragdoll
             }
             else if (reached)
             {
-                //ResetAngularVelocities();
+                ResetAngularVelocities();
                 return;
             }
 
