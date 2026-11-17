@@ -65,11 +65,12 @@ namespace _3D_Engine.Classes.NeuralNet
                     minPhase = delta;
             }
 
-            // Reward net locomotion toward targets while strongly favoring steering in all 4 directions
+            // Penalize wrong-way drift heavily (0.85x) so blind single-direction movers gain
+            // almost nothing regardless of angle, while rewarding steering across all 4 directions.
             float minPosBonus = MathF.Max(0f, minPhase);
             float arrivalBonus = ragdoll.PhasesReachedCount * 8f;
 
-            return posSum + (0.5f * negSum) + (2.0f * minPosBonus) + arrivalBonus;
+            return posSum + (0.85f * negSum) + (2.0f * minPosBonus) + arrivalBonus;
         }
 
         public static float EvalEnergyUsed(float EnergyUsed)

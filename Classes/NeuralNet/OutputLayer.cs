@@ -1,4 +1,4 @@
-using MathNet.Numerics.LinearAlgebra;
+﻿using MathNet.Numerics.LinearAlgebra;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +25,10 @@ namespace _3D_Engine.Classes.NeuralNet
 
         public override Matrix<float> getOutputAfterWeights(Matrix<float> inputMatrix)
         {
-            this.InputMatrix = inputMatrix + LayerBias;
-            this.neuronValues = MatrixOperationHelper.TanhMatrix(this.InputMatrix);
-            return this.neuronValues;
+            this.InputMatrix = inputMatrix;
+            this.InputMatrix = MatrixOperationHelper.TanhMatrix(inputMatrix);
+            //return MatrixOperationHelper.TanhMatrix(neuronValues);
+            return this.InputMatrix;
         }
 
     }

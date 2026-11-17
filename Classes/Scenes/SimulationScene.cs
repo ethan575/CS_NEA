@@ -482,11 +482,11 @@ namespace _3D_Engine.Classes.Scenes
                 (angles[i], angles[j]) = (angles[j], angles[i]);
             }
 
+            const float targetRadius = 45f;
             for (int i = 0; i < TargetPhasesPerGeneration; i++)
             {
-                float radius = 32f + rng.NextSingle() * 14f; // 32..46 units away
-                float x = Math.Clamp(centre.X + MathF.Cos(angles[i]) * radius, -52f, 52f);
-                float z = Math.Clamp(centre.Z + MathF.Sin(angles[i]) * radius, -52f, 52f);
+                float x = Math.Clamp(centre.X + MathF.Cos(angles[i]) * targetRadius, -52f, 52f);
+                float z = Math.Clamp(centre.Z + MathF.Sin(angles[i]) * targetRadius, -52f, 52f);
                 phaseTargets[i] = new JVector(x, TargetFloorY, z);
             }
 

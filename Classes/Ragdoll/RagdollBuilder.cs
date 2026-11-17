@@ -1,4 +1,4 @@
-using _3D_Engine.Classes.Data;
+﻿using _3D_Engine.Classes.Data;
 using _3D_Engine.Classes.Helper;
 using _3D_Engine.Classes.Objects;
 using _3D_Engine.Classes.Scenes;
@@ -306,9 +306,9 @@ namespace _3D_Engine.Classes.Ragdoll
             }
             if (game.IsKeyReleased(Keys.M))
             {
-                if (selectedObject is Joint joint)
+                if (selectedObject is Joint)
                 {
-                    joint.SetJointAnchor(joint.position);
+                    ((Joint)selectedObject).SetJointAnchor(selectedObject.Position);
                 }
             }
 

@@ -181,7 +181,10 @@ namespace _3D_Engine.Classes.Ragdoll
             float progressMeters = startDist - endDist;
 
             PhaseProgressMeters.Add(progressMeters);
-            if (endDist <= ArrivalRadius || phaseMinHorizontalDist <= ArrivalRadius)
+            // Require genuine travel toward this phase's target so a creature cannot earn
+            // an arrival bonus merely because a new target spawned near its current position.
+            if (startDist > ArrivalRadius * 1.5f && progressMeters >= 10f &&
+                (endDist <= ArrivalRadius || phaseMinHorizontalDist <= ArrivalRadius))
             {
                 PhasesReachedCount++;
             }
