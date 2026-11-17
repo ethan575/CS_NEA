@@ -1,4 +1,4 @@
-﻿using MathNet.Numerics.Distributions;
+using MathNet.Numerics.Distributions;
 using MathNet.Numerics.LinearAlgebra;
 
 
@@ -52,7 +52,7 @@ namespace _3D_Engine.Classes.NeuralNet
         }
 
 
-        private void initializeNetwork() // gives neurons random biases
+        private void initializeNetwork() // initializes layer biases to zero with matching layer dimensions
         {
 
             for (int i = 0; i < LayerDims.Length; i++)
@@ -60,7 +60,7 @@ namespace _3D_Engine.Classes.NeuralNet
                 switch (i)
                 {
                     case 0:
-                        NetworkLayer inputLayer = new InputLayer(Matrix<float>.Build.Random(LayerDims[i], 1), NetworkWeights[i]);
+                        NetworkLayer inputLayer = new InputLayer(Matrix<float>.Build.Dense(LayerDims[i], 1, 0f), NetworkWeights[i]);
                         inputLayer.SetLayerBias(Matrix<float>.Build.Dense(LayerDims[i], 1, 0f));
                         NetworkLayers.Add(inputLayer);
                         break;
@@ -69,8 +69,7 @@ namespace _3D_Engine.Classes.NeuralNet
                         if (i != LayerDims.Length - 1)
                         {
                             NetworkLayer hiddenLayer = new HiddenLayer(LayerDims[i], NetworkWeights[i]);
-                            //hiddenLayer.SetLayerBias(Matrix<float>.Build.Random(LayerDims[i], 1), NetworkWeights[i]);
-                            hiddenLayer.SetLayerBias(Matrix<float>.Build.Dense(LayerDims[i+1], 1, 0f));
+                            hiddenLayer.SetLayerBias(Matrix<float>.Build.Dense(LayerDims[i], 1, 0f));
                             NetworkLayers.Add(hiddenLayer);
                             break;
                         }
@@ -116,17 +115,16 @@ namespace _3D_Engine.Classes.NeuralNet
             }
         }
 
-        private void initializeWeights()////////////////////implement non random????
+        private void initializeWeights()
         {
             // between each layer
             for (int i = 0; i < LayerDims.Length - 1; i++)
             {
-                Random rng = new Random();
-                // He initialization: stddev = sqrt(2/n) where n is the number of inputs to the layer to keep size of input and output similar
-                // so output size doesnt scale with number of inputs
-                float stDev = (float)Math.Sqrt(2f/LayerDims[i]);
+                // He initialization for LeakyReLU hidden layers, Xavier initialization into Tanh output layer
+                float stDev = (i < LayerDims.Length - 2)
+                    ? (float)Math.Sqrt(2f / LayerDims[i])
+                    : (float)Math.Sqrt(1f / LayerDims[i]);
                 Matrix<float> currentLayerWeight = Matrix<float>.Build.Random(LayerDims[i + 1], LayerDims[i], new Normal(0, stDev));
-                //Matrix<float> currentLayerWeight = Matrix<float>.Build.Dense(LayerDims[i+1], LayerDims[i], (i, j) => -(i % 2) * (float)rng.NextDouble() * 2 );
                 NetworkWeights.Add(currentLayerWeight);
             }
         }
