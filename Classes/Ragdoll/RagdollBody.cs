@@ -1,5 +1,4 @@
-﻿using _3D_Engine.Classes.NeuralNet;
-using _3D_Engine.Classes.physics;
+using _3D_Engine.Classes.NeuralNet;
 using Jitter2;
 using Jitter2.LinearMath;
 using MathNet.Numerics.LinearAlgebra;
@@ -32,6 +31,9 @@ namespace _3D_Engine.Classes.Ragdoll
 
     public class RagdollBody
     {
+        public const float MaxJointMotorVelocity = 10f; // rad/s
+        public const float ArrivalRadius = 10f;
+
         public List<Bone> Bones { get; set; }
         public List<Joint> Joints { get; set; }
 
@@ -48,6 +50,13 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public JVector initialPos;
 
+        public List<float> PhaseProgressMeters { get; } = new List<float>();
+        public int PhasesReachedCount { get; private set; } = 0;
+
+        private JVector phaseStartPos = JVector.Zero;
+        private JVector phaseTargetPos = JVector.Zero;
+        private bool hasActivePhase = false;
+        private float phaseMinHorizontalDist = float.MaxValue;
 
         private float period = 1.5f; // period of the sine wave for the clock input
 
@@ -55,14 +64,14 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public FitnessObjective[] fitnessObjectives = new FitnessObjective[]
         {
-            // ragdoll is the parameter in lambda function
-            // disreguard energy usage at first
-            new FitnessObjective(20f, ragdoll => Objectives.EvalProgressToTarget(ragdoll.initialPos, ragdoll.COMPosition, ragdoll.TargetPosition)),
+            new FitnessObjective(1f, ragdoll => Objectives.EvalMultiPhaseTargetFollowing(ragdoll)),
             new FitnessObjective(0f, ragdoll => Objectives.EvalEnergyUsed(ragdoll.EnergyUsed)),
             new FitnessObjective(5f, ragdoll => Objectives.EvalTimeTaken(ragdoll.TimeToReachTarget, ragdoll.reached))
         };
 
         private float clock = 0f;
+
+        public int RequiredInputCount => (this.Joints.Count * 2) + 12;
 
         public RagdollBody(List<Bone> bones, List<Joint> joints)
         {
@@ -71,6 +80,7 @@ namespace _3D_Engine.Classes.Ragdoll
 
             COMPosition = ComputeCentreOfMass();
             BodyVelocity = ComputeVelocity();
+            initialPos = COMPosition;
             this.initialConfig = new RagdollSnapshot
             {
                 COMPosition = COMPosition,
@@ -84,25 +94,28 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void SetBrain(NeuralNetwork brain)
         {
-            /* 
-         inputs = [
-        each joint angle,
-        each joint angular velocity,
-        COM velocity,
-        direction to target,
-        sin
-        cos
-        Reference bone faceing direction (e.g., forward vector of the torso)
+            /*
+             inputs = [
+                each joint angle (normalized to +/- 45 deg limit),
+                each joint angular velocity,
+                COM velocity in reference bone local frame (3),
+                direction to target in reference bone local frame (3),
+                reference bone local up vector (3),
+                normalized distance to target (1),
+                sin(clock),
+                cos(clock)
+             ]
+             */
 
-        ]
-         */
-
-            if (brain.LayerDims[0] != (this.Joints.Count * 2) + 8)
+            if (brain.LayerDims[0] != RequiredInputCount)
             {
-                throw new ArgumentException("Input layer size must equal twice the joint count plus eight.");
+                throw new ArgumentException($"Input layer size ({brain.LayerDims[0]}) must equal twice the joint count plus twelve ({RequiredInputCount}).");
+            }
+            if (brain.LayerDims[brain.LayerDims.Length - 1] != this.Joints.Count)
+            {
+                throw new ArgumentException($"Output layer size ({brain.LayerDims[brain.LayerDims.Length - 1]}) must equal joint count ({this.Joints.Count}).");
             }
             Brain = brain;
-
         }
 
         public JVector ComputeCentreOfMass()
@@ -136,109 +149,146 @@ namespace _3D_Engine.Classes.Ragdoll
             return totalMass > 0 ? total * (1 / totalMass) : JVector.Zero;
         }
 
+        public static float HorizontalDistance(JVector a, JVector b)
+        {
+            float dx = a.X - b.X;
+            float dz = a.Z - b.Z;
+            return MathF.Sqrt(dx * dx + dz * dz);
+        }
 
+        public void BeginTargetPhase(JVector newTargetPosition)
+        {
+            if (hasActivePhase)
+            {
+                FinalizeCurrentPhase();
+            }
+
+            TargetPosition = newTargetPosition;
+            phaseTargetPos = newTargetPosition;
+            COMPosition = ComputeCentreOfMass();
+            phaseStartPos = COMPosition;
+            phaseMinHorizontalDist = HorizontalDistance(phaseStartPos, phaseTargetPos);
+            hasActivePhase = true;
+        }
+
+        public void FinalizeCurrentPhase()
+        {
+            if (!hasActivePhase) return;
+
+            COMPosition = ComputeCentreOfMass();
+            float startDist = HorizontalDistance(phaseStartPos, phaseTargetPos);
+            float endDist = HorizontalDistance(COMPosition, phaseTargetPos);
+            float progressMeters = startDist - endDist;
+
+            PhaseProgressMeters.Add(progressMeters);
+            // Require genuine travel toward this phase's target so a creature cannot earn
+            // an arrival bonus merely because a new target spawned near its current position.
+            if (startDist > ArrivalRadius * 1.5f && progressMeters >= 10f &&
+                (endDist <= ArrivalRadius || phaseMinHorizontalDist <= ArrivalRadius))
+            {
+                PhasesReachedCount++;
+            }
+
+            hasActivePhase = false;
+        }
 
         public Matrix<float> GetBrainInputMatrix()
         {
+            if (Brain == null)
+            {
+                throw new InvalidOperationException("Brain is not set.");
+            }
+
             // Inputs must reflect physics even if no render frame has run.
             COMPosition = ComputeCentreOfMass();
             BodyVelocity = ComputeVelocity();
             Matrix<float> inputMatrix = Matrix<float>.Build.Dense(Brain.LayerDims[0], 1);
-            int LastWrittenIdx = 0;
 
-            // all joint values 
-            for (int i = 0; i < Joints.Count; i++) // each joint has 2 inputs
+            JQuaternion refOrientation = Bones.Count > 0 ? Bones[0].RB.Orientation : JQuaternion.Identity;
+            JQuaternion invRefOrientation = JQuaternion.Conjugate(refOrientation);
+
+            // Joint angles & angular velocities
+            for (int i = 0; i < Joints.Count; i++)
             {
                 Joint joint = Joints[i];
-                inputMatrix[2 * i, 0] = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI);
+                float angleNorm = joint.HindgeJointConstraint.HingeAngle.Angle.Radian / (MathF.PI / 4f);
+                float angVelNorm = joint.AngularVelocityRad() / 8f;
 
-                inputMatrix[2 * i + 1, 0] = joint.AngularVelocityRad() / 2; // max observed is 5
-                //inputMatrix[2*i + 1, 0] = joint.HindgeJointConstraint.Motor.TargetVelocity / 1200;
-
-
+                inputMatrix[2 * i, 0] = float.IsFinite(angleNorm) ? Math.Clamp(angleNorm, -2f, 2f) : 0f;
+                inputMatrix[2 * i + 1, 0] = float.IsFinite(angVelNorm) ? Math.Clamp(angVelNorm, -2f, 2f) : 0f;
             }
-            LastWrittenIdx = 2 * Joints.Count;
-            // general body info
-            // max velocity = 100
 
-            // body velocity
-            inputMatrix[LastWrittenIdx, 0] = this.BodyVelocity.X / 12;
-            inputMatrix[LastWrittenIdx + 1, 0] = this.BodyVelocity.Y / 12;
-            inputMatrix[LastWrittenIdx + 2, 0] = this.BodyVelocity.Z / 12;
+            int lastWrittenIdx = 2 * Joints.Count;
 
-            //target dir
-            JVector DirToTarget = (TargetPosition - this.ComputeCentreOfMass());
-            float dist = DirToTarget.Length();
-            DirToTarget = dist > 1e-4f ? DirToTarget * (1f / dist) : JVector.Zero;
-            inputMatrix[LastWrittenIdx + 3, 0] = DirToTarget.X;
-            inputMatrix[LastWrittenIdx + 4, 0] = DirToTarget.Y;
-            inputMatrix[LastWrittenIdx + 5, 0] = DirToTarget.Z;
+            // Body velocity in reference bone's local frame
+            JVector localVel = JVector.Transform(this.BodyVelocity, invRefOrientation);
+            inputMatrix[lastWrittenIdx + 0, 0] = float.IsFinite(localVel.X) ? Math.Clamp(localVel.X / 10f, -2f, 2f) : 0f;
+            inputMatrix[lastWrittenIdx + 1, 0] = float.IsFinite(localVel.Y) ? Math.Clamp(localVel.Y / 10f, -2f, 2f) : 0f;
+            inputMatrix[lastWrittenIdx + 2, 0] = float.IsFinite(localVel.Z) ? Math.Clamp(localVel.Z / 10f, -2f, 2f) : 0f;
 
-            // sin cos clock
-            inputMatrix[LastWrittenIdx + 6, 0] = MathF.Sin(2f * MathF.PI * clock / period);
-            inputMatrix[LastWrittenIdx + 7, 0] = MathF.Cos(2f * MathF.PI * clock / period);
+            // Direction to target in reference bone's local frame
+            JVector worldDir = TargetPosition - COMPosition;
+            float dist = worldDir.Length();
+            JVector worldUnitDir = dist > 1e-4f ? worldDir * (1f / dist) : JVector.Zero;
+            JVector localDir = JVector.Transform(worldUnitDir, invRefOrientation);
+            inputMatrix[lastWrittenIdx + 3, 0] = float.IsFinite(localDir.X) ? localDir.X : 0f;
+            inputMatrix[lastWrittenIdx + 4, 0] = float.IsFinite(localDir.Y) ? localDir.Y : 0f;
+            inputMatrix[lastWrittenIdx + 5, 0] = float.IsFinite(localDir.Z) ? localDir.Z : 0f;
 
-            //LastWrittenIdx = LastWrittenIdx + 6;
+            // World up vector in reference bone's local frame (tilt / inversion awareness)
+            JVector localUp = JVector.Transform(JVector.UnitY, invRefOrientation);
+            inputMatrix[lastWrittenIdx + 6, 0] = float.IsFinite(localUp.X) ? localUp.X : 0f;
+            inputMatrix[lastWrittenIdx + 7, 0] = float.IsFinite(localUp.Y) ? localUp.Y : 1f;
+            inputMatrix[lastWrittenIdx + 8, 0] = float.IsFinite(localUp.Z) ? localUp.Z : 0f;
 
-            //Console.WriteLine("Input Matrix: ");
-            //Console.WriteLine(inputMatrix.ToString());
+            // Distance to target (0 at target, saturates at 1 for >= 30 units away)
+            inputMatrix[lastWrittenIdx + 9, 0] = float.IsFinite(dist) ? Math.Clamp(dist / 30f, 0f, 1f) : 1f;
+
+            // Sin / cos periodic clock
+            inputMatrix[lastWrittenIdx + 10, 0] = MathF.Sin(2f * MathF.PI * clock / period);
+            inputMatrix[lastWrittenIdx + 11, 0] = MathF.Cos(2f * MathF.PI * clock / period);
 
             return inputMatrix;
         }
 
         public void BrainNNFF(Matrix<float> input)
         {
-
-            //deactivate if close to target, to avoid overshooting and oscillation
-            if (!reached && (this.TargetPosition - this.ComputeCentreOfMass()).Length() < 15f)
-            {
-                ResetAngularVelocities();
-
-                TimeToReachTarget = new Generation().ActiveTimeLeft - clock;
-                reached = true;
-                Console.WriteLine("Reached target in: " + TimeToReachTarget + " seconds");
-                return;
-            }
-            else if (reached)
-            {
-                ResetAngularVelocities();
-                return;
-            }
-
             if (Brain == null)
             {
                 throw new InvalidOperationException("Brain is not set.");
             }
-
             else if (input.RowCount != Brain.LayerDims[0] || input.ColumnCount != 1)
             {
                 throw new ArgumentException("Input matrix dimensions do not match the expected input layer size.");
             }
 
-            Matrix<float> output = Brain.GetNetworkOutput(input);
-
-            //Console.Write("");
-            // Process the output to apply forces or torques to the bones
-            //!! may need to fix the target angle function 
-            // iterate through the output and apply forces/torques to the bones
-            for (int i = 0; i < Joints.Count; i++)
+            COMPosition = ComputeCentreOfMass();
+            float horizontalDist = HorizontalDistance(COMPosition, TargetPosition);
+            if (hasActivePhase)
             {
-                //var t = Math.Clamp(output[i, 0] * 1200, -1200, 1200);
-                // BrainNNFF, when applying outputs
-                float o = output[i, 0];
-                if (float.IsNaN(o) || float.IsInfinity(o)) o = 0f;
-                var t = Math.Clamp(o * 1200, -1200, 1200);
-
-                Joints[i].HindgeJointConstraint.Motor.TargetVelocity = t;//*10000;
-                ///!!!!!!!!!!! this doent work> naybe? beacuse energy end up being huge as it is called for every frame, need to integrate over time?
-                EnergyUsed += Math.Abs(t / 128);
-
-                //Console.WriteLine("t: " + t);
-                //Console.WriteLine("t: " + output[i, 0] * 1200);
-                //Console.WriteLine(t);
-                //Console.WriteLine(Joints[i].HindgeJointConstraint.Motor.TargetVelocity);
+                phaseMinHorizontalDist = MathF.Min(phaseMinHorizontalDist, horizontalDist);
             }
 
+            // Record first time the creature reaches the target, but keep the brain active
+            // so it continues balancing and following if the target moves.
+            if (!reached && horizontalDist <= ArrivalRadius)
+            {
+                TimeToReachTarget = clock;
+                reached = true;
+                Console.WriteLine("Reached target in: " + TimeToReachTarget + " seconds");
+            }
+
+            Matrix<float> output = Brain.GetNetworkOutput(input);
+
+            for (int i = 0; i < Joints.Count; i++)
+            {
+                float o = output[i, 0];
+                if (float.IsNaN(o) || float.IsInfinity(o)) o = 0f;
+                float t = Math.Clamp(o * MaxJointMotorVelocity, -MaxJointMotorVelocity, MaxJointMotorVelocity);
+
+                Joints[i].HindgeJointConstraint.Motor.TargetVelocity = t;
+                EnergyUsed += MathF.Abs(o);
+            }
         }
 
         public void AddBone(Bone bone)
@@ -278,21 +328,17 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void Update(float dt)
         {
-
             foreach (var bone in Bones)
             {
                 bone.UpdateVisual();
-
             }
             foreach (var joint in Joints)
             {
                 joint.UpdateVisual();
-
             }
 
             COMPosition = this.ComputeCentreOfMass();
             this.BodyVelocity = ComputeVelocity();
-
         }
 
         public void setPostion(JVector position)
@@ -307,10 +353,10 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public RagdollBody Clone(World world)
         {
-            List<Bone> clonedBones = Bones.Select(b => (Bone)b.Clone(world)).ToList(); //fupicate of bones
-            var byId = clonedBones.ToDictionary(b => b.BoneID); // dict, key = boneID value = cloned bone
+            List<Bone> clonedBones = Bones.Select(b => (Bone)b.Clone(world)).ToList();
+            var byId = clonedBones.ToDictionary(b => b.BoneID);
 
-            List<Joint> clonedJoints = Joints.Select(j => j.Clone(world, byId[j.BoneA.BoneID], byId[j.BoneB.BoneID])).ToList(); //existong bones
+            List<Joint> clonedJoints = Joints.Select(j => j.Clone(world, byId[j.BoneA.BoneID], byId[j.BoneB.BoneID])).ToList();
 
             RagdollBody clonedRagdoll = new RagdollBody(clonedBones, clonedJoints);
             // Snapshot arrays must not be shared between creatures.
@@ -323,14 +369,19 @@ namespace _3D_Engine.Classes.Ragdoll
                 BoneVelocities = initialConfig.BoneVelocities.ToArray(),
                 BoneRotations = initialConfig.BoneRotations.ToArray()
             };
+            clonedRagdoll.initialPos = initialConfig.COMPosition;
             clonedRagdoll.clock = clock;
             clonedRagdoll.TargetPosition = TargetPosition;
-            clonedRagdoll.SetBrain(this.Brain.Copy());
+            if (this.Brain != null)
+            {
+                clonedRagdoll.SetBrain(this.Brain.Copy());
+            }
             return clonedRagdoll;
         }
 
         public void EndOfGenerationTasks()
         {
+            FinalizeCurrentPhase();
             Brain.ExecuteEndOfGenerationTasks();
 
             var dist = (this.TargetPosition - this.ComputeCentreOfMass()).Length();
@@ -355,12 +406,21 @@ namespace _3D_Engine.Classes.Ragdoll
                 rb.Force = JVector.Zero;
                 rb.Torque = JVector.Zero;
             }
+            foreach (var joint in Joints)
+            {
+                joint.ResetWarmStart();
+            }
             clock = 0f;
             EnergyUsed = 0f;
             COMPosition = ComputeCentreOfMass();
             BodyVelocity = ComputeVelocity();
+            initialPos = initialConfig.COMPosition;
             TimeToReachTarget = 0f;
             reached = false;
+            PhaseProgressMeters.Clear();
+            PhasesReachedCount = 0;
+            hasActivePhase = false;
+            phaseMinHorizontalDist = float.MaxValue;
         }
 
     }

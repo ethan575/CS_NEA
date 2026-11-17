@@ -1,4 +1,4 @@
-﻿using _3D_Engine.Classes.Objects;
+using _3D_Engine.Classes.Objects;
 using Jitter2;
 using Jitter2.Dynamics.Constraints;
 using Jitter2.LinearMath;
@@ -114,7 +114,8 @@ namespace _3D_Engine.Classes.Ragdoll
                 HindgeJointConstraint.Remove();
                 HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
                 HindgeJointConstraint.HingeAngle.Limit = JointAgularLimit;
-                HindgeJointConstraint.Motor.MaximumForce = 200f;
+                HindgeJointConstraint.Motor.MaximumForce = 400f;
+                HindgeJointConstraint.Motor.IsEnabled = true;
             }
             if (HindgeJointConstraint != null)
                 localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
@@ -128,7 +129,9 @@ namespace _3D_Engine.Classes.Ragdoll
                 HindgeJointConstraint.Remove();
                 HindgeJointConstraint = new HingeJoint(BoneA.RB.World, BoneA.RB, BoneB.RB, anchorPoint, jointAxis, true);
                 HindgeJointConstraint.HingeAngle.Limit = JointAgularLimit;
-                HindgeJointConstraint.Motor.MaximumForce = 200f;
+                HindgeJointConstraint.Motor.MaximumForce = 400f;
+                HindgeJointConstraint.Motor.IsEnabled = true;
+                localAxis = JVector.Transform(jointAxis, JQuaternion.Conjugate(BoneA.RB.Orientation));
             }
         }
 
@@ -163,6 +166,13 @@ namespace _3D_Engine.Classes.Ragdoll
             HindgeJointConstraint.Motor.IsEnabled = true;
         }
 
+        public void ResetWarmStart()
+        {
+            HindgeJointConstraint?.HingeAngle.ResetWarmStart();
+            HindgeJointConstraint?.BallSocket.ResetWarmStart();
+            HindgeJointConstraint?.Motor?.ResetWarmStart();
+        }
+
         public override void UpdateVisual()
         {
             // Update the visual representation of the bone based on the rigid body's position and orientation
@@ -182,8 +192,8 @@ namespace _3D_Engine.Classes.Ragdoll
 
         public void destroy()
         {
-            Visual.Destroy();
-            HingeAxisVisual.Destroy();
+            Visual?.Destroy();
+            HingeAxisVisual?.Destroy();
             HindgeJointConstraint?.Remove();
             
         }
@@ -208,7 +218,7 @@ namespace _3D_Engine.Classes.Ragdoll
             clone.HindgeJointConstraint.Motor.MaximumForce = HindgeJointConstraint.Motor.MaximumForce;
             clone.HindgeJointConstraint.Motor.IsEnabled = HindgeJointConstraint.Motor.IsEnabled;
             clone.HindgeJointConstraint.Motor.TargetVelocity = HindgeJointConstraint.Motor.TargetVelocity;
-            clone.localAxis = JVector.Transform(clone.jointAxis, JQuaternion.Conjugate(newBoneA.RB.Orientation));
+            clone.localAxis = localAxis;
             return clone;
         }
 
